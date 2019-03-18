@@ -9,9 +9,27 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Delete JSP</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+        int json_id = Integer.parseInt(request.getParameter("json_id"));
+        
+	org.me.ikarus.CoreWS_Service service = new org.me.ikarus.CoreWS_Service();
+	org.me.ikarus.CoreWS port = service.getCoreWSPort();
+	 // TODO initialize WS operation arguments here
+	int id = json_id;
+	// TODO process result here
+	java.lang.Boolean result = port.delete(id);
+	out.println("Result = "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
     </body>
 </html>

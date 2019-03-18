@@ -1,5 +1,13 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ikarus.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ikarus.me.org/">
 
+<xs:element name="DELETE" type="tns:DELETE" />
+
+<xs:element name="DELETEResponse" type="tns:DELETEResponse" />
+
+<xs:element name="GET" type="tns:GET" />
+
+<xs:element name="GETResponse" type="tns:GETResponse" />
+
 <xs:element name="STORE" type="tns:STORE" />
 
 <xs:element name="STOREResponse" type="tns:STOREResponse" />
@@ -22,7 +30,6 @@
 
 <xs:complexType name="STORE">
 <xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0" />
 <xs:element name="content" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
@@ -30,6 +37,30 @@
 <xs:complexType name="STOREResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DELETE">
+<xs:sequence>
+<xs:element name="id" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DELETEResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GET">
+<xs:sequence>
+<xs:element name="id" type="xs:int" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GETResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 </xs:schema>

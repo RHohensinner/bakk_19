@@ -26,7 +26,36 @@ public interface CoreWS {
 
     /**
      * 
-     * @param name
+     * @param id
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GET")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GET", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.GET")
+    @ResponseWrapper(localName = "GETResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.GETResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/GETRequest", output = "http://ikarus.me.org/CoreWS/GETResponse")
+    public String get(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
+     * @param id
+     * @return
+     *     returns java.lang.Boolean
+     */
+    @WebMethod(operationName = "DELETE")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DELETE", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETE")
+    @ResponseWrapper(localName = "DELETEResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETEResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/DELETERequest", output = "http://ikarus.me.org/CoreWS/DELETEResponse")
+    public Boolean delete(
+        @WebParam(name = "id", targetNamespace = "")
+        int id);
+
+    /**
+     * 
      * @param content
      * @return
      *     returns int
@@ -37,8 +66,6 @@ public interface CoreWS {
     @ResponseWrapper(localName = "STOREResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.STOREResponse")
     @Action(input = "http://ikarus.me.org/CoreWS/STORERequest", output = "http://ikarus.me.org/CoreWS/STOREResponse")
     public int store(
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
         @WebParam(name = "content", targetNamespace = "")
         String content);
 

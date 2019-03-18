@@ -4,6 +4,18 @@
 <xsd:import namespace="http://ikarus.me.org/" schemaLocation="http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?xsd=1" />
 </xsd:schema>
 </types>
+<message name="GET">
+<part name="parameters" element="tns:GET" />
+</message>
+<message name="GETResponse">
+<part name="parameters" element="tns:GETResponse" />
+</message>
+<message name="DELETE">
+<part name="parameters" element="tns:DELETE" />
+</message>
+<message name="DELETEResponse">
+<part name="parameters" element="tns:DELETEResponse" />
+</message>
 <message name="STORE">
 <part name="parameters" element="tns:STORE" />
 </message>
@@ -17,6 +29,14 @@
 <part name="parameters" element="tns:helloResponse" />
 </message>
 <portType name="CoreWS">
+<operation name="GET">
+<input wsam:Action="http://ikarus.me.org/CoreWS/GETRequest" message="tns:GET" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/GETResponse" message="tns:GETResponse" />
+</operation>
+<operation name="DELETE">
+<input wsam:Action="http://ikarus.me.org/CoreWS/DELETERequest" message="tns:DELETE" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/DELETEResponse" message="tns:DELETEResponse" />
+</operation>
 <operation name="STORE">
 <input wsam:Action="http://ikarus.me.org/CoreWS/STORERequest" message="tns:STORE" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/STOREResponse" message="tns:STOREResponse" />
@@ -28,6 +48,24 @@
 </portType>
 <binding name="CoreWSPortBinding" type="tns:CoreWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+<operation name="GET">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="DELETE">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="STORE">
 <soap:operation soapAction="" />
 <input>

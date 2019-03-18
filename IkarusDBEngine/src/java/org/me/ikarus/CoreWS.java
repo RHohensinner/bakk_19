@@ -31,10 +31,49 @@ public class CoreWS {
      * Web service operation
      */
     @WebMethod(operationName = "STORE")
-    public int STORE(@WebParam(name = "name") String name, @WebParam(name = "content") String content) {
-        //TODO write your implementation code here:
-        out.println(name + content);
-        return 50;
+    public int STORE(@WebParam(name = "content") String content) 
+    {
+        System.out.println("before insert:");
+        Main.getInstance().printAllJson();
+        
+        int new_id = Main.getInstance().getNewJsonId();
+        Main.getInstance().addNewJson(new_id, content);
+        
+        System.out.println("after insert:");
+        
+        return new_id;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GET")
+    public String GET(@WebParam(name = "id") int id) 
+    {
+        String found_json = Main.getInstance().findJson(id);
+        
+        return found_json;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "DELETE")
+    public Boolean DELETE(@WebParam(name = "id") int id) 
+    {
+        String found_json = Main.getInstance().findJson(id);
+        
+        Main.getInstance().printAllJson();
+        
+        if(found_json != null)
+        {
+            Main.getInstance().removeJson(id);
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 
 }
