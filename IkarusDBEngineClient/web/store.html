@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Store Page</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <h1>Please provide a JSON file to store</h1>
+        <form action="http://localhost:8080/IkarusDBEngineClient/store.jsp"  method="post">
+        Select a JSON file: 
+        <input type="text" id="jsonName" name="json_name">
+        <input type="text" id="jsonContent" name="json_content" size="30">
+        <input type="submit" value="Submit">
+        </form>
+<!---        
+        <div id="page-wrapper">
+		<form action="http://localhost:8080/IkarusDBEngineClient/store.jsp"  method="post">
+			Select a JSON file: 
+			<input type="file" id="fileInput" name="json_file">
+                        <input type="submit" value="Submit">
+		</form>
+		<pre id="fileDisplayArea"></pre>
+
+        </div>
+
+        <script src="json.js"></script>
+        
+        <br><br><br>
+--->        
+        <button onclick="goBack()">Back</button>
+
+        <script>
+        function goBack() {
+             window.history.back();
+        }
+        </script> 
+    </body>
+</html>
