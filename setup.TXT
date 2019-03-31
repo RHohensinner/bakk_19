@@ -1,0 +1,26 @@
+- Download Netbeans 8.1/8.2
+
+- Start it and point Netbeans to a local Java EE (1.6+) directory.
+
+- Download the Tomcat (7.0.) server.
+
+- In Netbeans Tools->Servers 'Add Server' and point Netbeans to the Tomcat directory.
+
+- Open both projects (IkarusDBEngine & IkarusDBEngineClient)
+
+- Clean/Clean & Build the IkarusDBEngine Project - then deploy it to the Tomcat server.
+
+- Repeat the same procedure to the IkarusDBEngineClient Project.
+
+- Select the IkarusDBEngineClient project and click on Run.
+
+
+You should now see the test client index.jsp page!
+
+
+
+// in case you get a compiler warning because of the simple_json_1_1_1.jar, 
+// download the .jar and in both projects Libraries(right-click)->Add JAR/Folder... and select the .jar.
+
+
+// links to the downloads are listed in dependencies.txt
