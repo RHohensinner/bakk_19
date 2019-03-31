@@ -15,15 +15,15 @@
     <%-- start web service invocation --%><hr/>
     <%
     try {
-        int json_id = Integer.parseInt(request.getParameter("json_id"));
+        String json_id = request.getParameter("json_id");
         
 	org.me.ikarus.CoreWS_Service service = new org.me.ikarus.CoreWS_Service();
 	org.me.ikarus.CoreWS port = service.getCoreWSPort();
 	 // TODO initialize WS operation arguments here
-	int id = json_id;
+	String id = json_id;
 	// TODO process result here
 	java.lang.String result = port.get(id);
-	out.println("Result = "+result);
+	out.println("Result: "+result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }

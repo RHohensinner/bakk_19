@@ -6,13 +6,26 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Store Page</title>
+        <title>Reset Html</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>Please provide a JSON file to store</div>
+        <div>Please make sure you know what you are doing...</div>
         
-        Select a file: <input type="file" name="myFile">
+        <form action="http://localhost:8080/IkarusDBEngineClient/reset.jsp" id="resetform" method="post">
+        Confirm by typing: "IKnowWhatIamDoing"<input type="text" name="doom" id="jsonId">
+        </form>
+        
+        <input type="submit" value="Submit" form="resetform">
+        
+        
+        <button onclick="goBack()">Back</button>
+
+        <script>
+        function goBack() {
+             window.history.back();
+        }
+        </script> 
     </body>
 </html>

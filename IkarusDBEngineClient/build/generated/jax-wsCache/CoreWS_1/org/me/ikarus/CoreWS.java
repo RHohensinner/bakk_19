@@ -26,6 +26,21 @@ public interface CoreWS {
 
     /**
      * 
+     * @param doom
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "RESET")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "RESET", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.RESET")
+    @ResponseWrapper(localName = "RESETResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.RESETResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/RESETRequest", output = "http://ikarus.me.org/CoreWS/RESETResponse")
+    public String reset(
+        @WebParam(name = "doom", targetNamespace = "")
+        String doom);
+
+    /**
+     * 
      * @param id
      * @return
      *     returns java.lang.String
@@ -37,37 +52,133 @@ public interface CoreWS {
     @Action(input = "http://ikarus.me.org/CoreWS/GETRequest", output = "http://ikarus.me.org/CoreWS/GETResponse")
     public String get(
         @WebParam(name = "id", targetNamespace = "")
-        int id);
+        String id);
 
     /**
      * 
      * @param id
      * @return
-     *     returns java.lang.Boolean
+     *     returns java.lang.String
      */
     @WebMethod(operationName = "DELETE")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "DELETE", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETE")
     @ResponseWrapper(localName = "DELETEResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETEResponse")
     @Action(input = "http://ikarus.me.org/CoreWS/DELETERequest", output = "http://ikarus.me.org/CoreWS/DELETEResponse")
-    public Boolean delete(
+    public String delete(
         @WebParam(name = "id", targetNamespace = "")
-        int id);
+        String id);
+
+    /**
+     * 
+     * @param name
+     * @param id
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "MAKECOLL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "MAKECOLL", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.MAKECOLL")
+    @ResponseWrapper(localName = "MAKECOLLResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.MAKECOLLResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/MAKECOLLRequest", output = "http://ikarus.me.org/CoreWS/MAKECOLLResponse")
+    public String makecoll(
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
+
+    /**
+     * 
+     * @param name
+     * @param id
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "REMOVECOLL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "REMOVECOLL", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.REMOVECOLL")
+    @ResponseWrapper(localName = "REMOVECOLLResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.REMOVECOLLResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/REMOVECOLLRequest", output = "http://ikarus.me.org/CoreWS/REMOVECOLLResponse")
+    public String removecoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid,
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
+
+    /**
+     * 
+     * @param name
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "GETCOLL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "GETCOLL", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.GETCOLL")
+    @ResponseWrapper(localName = "GETCOLLResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.GETCOLLResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/GETCOLLRequest", output = "http://ikarus.me.org/CoreWS/GETCOLLResponse")
+    public String getcoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid,
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
+    /**
+     * 
+     * @param name
+     * @param id
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "INSERTCOLL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "INSERTCOLL", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.INSERTCOLL")
+    @ResponseWrapper(localName = "INSERTCOLLResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.INSERTCOLLResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/INSERTCOLLRequest", output = "http://ikarus.me.org/CoreWS/INSERTCOLLResponse")
+    public String insertcoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid,
+        @WebParam(name = "name", targetNamespace = "")
+        String name,
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
 
     /**
      * 
      * @param content
      * @return
-     *     returns int
+     *     returns java.lang.String
      */
     @WebMethod(operationName = "STORE")
     @WebResult(targetNamespace = "")
     @RequestWrapper(localName = "STORE", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.STORE")
     @ResponseWrapper(localName = "STOREResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.STOREResponse")
     @Action(input = "http://ikarus.me.org/CoreWS/STORERequest", output = "http://ikarus.me.org/CoreWS/STOREResponse")
-    public int store(
+    public String store(
         @WebParam(name = "content", targetNamespace = "")
         String content);
+
+    /**
+     * 
+     * @param name
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod(operationName = "DELETECOLL")
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "DELETECOLL", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETECOLL")
+    @ResponseWrapper(localName = "DELETECOLLResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DELETECOLLResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/DELETECOLLRequest", output = "http://ikarus.me.org/CoreWS/DELETECOLLResponse")
+    public String deletecoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid,
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
     /**
      * 

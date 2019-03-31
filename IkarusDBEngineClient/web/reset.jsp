@@ -12,6 +12,23 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+    <%-- start web service invocation --%><hr/>
+    <%
+    try {
+        String doom_ = request.getParameter("doom");
+        
+	org.me.ikarus.CoreWS_Service service = new org.me.ikarus.CoreWS_Service();
+	org.me.ikarus.CoreWS port = service.getCoreWSPort();
+	 // TODO initialize WS operation arguments here
+	java.lang.String doom = doom_;
+	// TODO process result here
+	java.lang.String result = port.reset(doom);
+	out.println("Result: "+result);
+    } catch (Exception ex) {
+	// TODO handle custom exceptions here
+    }
+    %>
+    <%-- end web service invocation --%><hr/>
+
     </body>
 </html>

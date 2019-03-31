@@ -4,6 +4,12 @@
 <xsd:import namespace="http://ikarus.me.org/" schemaLocation="http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?xsd=1" />
 </xsd:schema>
 </types>
+<message name="RESET">
+<part name="parameters" element="tns:RESET" />
+</message>
+<message name="RESETResponse">
+<part name="parameters" element="tns:RESETResponse" />
+</message>
 <message name="GET">
 <part name="parameters" element="tns:GET" />
 </message>
@@ -16,11 +22,41 @@
 <message name="DELETEResponse">
 <part name="parameters" element="tns:DELETEResponse" />
 </message>
+<message name="MAKECOLL">
+<part name="parameters" element="tns:MAKECOLL" />
+</message>
+<message name="MAKECOLLResponse">
+<part name="parameters" element="tns:MAKECOLLResponse" />
+</message>
+<message name="REMOVECOLL">
+<part name="parameters" element="tns:REMOVECOLL" />
+</message>
+<message name="REMOVECOLLResponse">
+<part name="parameters" element="tns:REMOVECOLLResponse" />
+</message>
+<message name="GETCOLL">
+<part name="parameters" element="tns:GETCOLL" />
+</message>
+<message name="GETCOLLResponse">
+<part name="parameters" element="tns:GETCOLLResponse" />
+</message>
+<message name="INSERTCOLL">
+<part name="parameters" element="tns:INSERTCOLL" />
+</message>
+<message name="INSERTCOLLResponse">
+<part name="parameters" element="tns:INSERTCOLLResponse" />
+</message>
 <message name="STORE">
 <part name="parameters" element="tns:STORE" />
 </message>
 <message name="STOREResponse">
 <part name="parameters" element="tns:STOREResponse" />
+</message>
+<message name="DELETECOLL">
+<part name="parameters" element="tns:DELETECOLL" />
+</message>
+<message name="DELETECOLLResponse">
+<part name="parameters" element="tns:DELETECOLLResponse" />
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello" />
@@ -29,6 +65,10 @@
 <part name="parameters" element="tns:helloResponse" />
 </message>
 <portType name="CoreWS">
+<operation name="RESET">
+<input wsam:Action="http://ikarus.me.org/CoreWS/RESETRequest" message="tns:RESET" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/RESETResponse" message="tns:RESETResponse" />
+</operation>
 <operation name="GET">
 <input wsam:Action="http://ikarus.me.org/CoreWS/GETRequest" message="tns:GET" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/GETResponse" message="tns:GETResponse" />
@@ -37,9 +77,29 @@
 <input wsam:Action="http://ikarus.me.org/CoreWS/DELETERequest" message="tns:DELETE" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/DELETEResponse" message="tns:DELETEResponse" />
 </operation>
+<operation name="MAKECOLL">
+<input wsam:Action="http://ikarus.me.org/CoreWS/MAKECOLLRequest" message="tns:MAKECOLL" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/MAKECOLLResponse" message="tns:MAKECOLLResponse" />
+</operation>
+<operation name="REMOVECOLL">
+<input wsam:Action="http://ikarus.me.org/CoreWS/REMOVECOLLRequest" message="tns:REMOVECOLL" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/REMOVECOLLResponse" message="tns:REMOVECOLLResponse" />
+</operation>
+<operation name="GETCOLL">
+<input wsam:Action="http://ikarus.me.org/CoreWS/GETCOLLRequest" message="tns:GETCOLL" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/GETCOLLResponse" message="tns:GETCOLLResponse" />
+</operation>
+<operation name="INSERTCOLL">
+<input wsam:Action="http://ikarus.me.org/CoreWS/INSERTCOLLRequest" message="tns:INSERTCOLL" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/INSERTCOLLResponse" message="tns:INSERTCOLLResponse" />
+</operation>
 <operation name="STORE">
 <input wsam:Action="http://ikarus.me.org/CoreWS/STORERequest" message="tns:STORE" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/STOREResponse" message="tns:STOREResponse" />
+</operation>
+<operation name="DELETECOLL">
+<input wsam:Action="http://ikarus.me.org/CoreWS/DELETECOLLRequest" message="tns:DELETECOLL" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/DELETECOLLResponse" message="tns:DELETECOLLResponse" />
 </operation>
 <operation name="hello">
 <input wsam:Action="http://ikarus.me.org/CoreWS/helloRequest" message="tns:hello" />
@@ -48,6 +108,15 @@
 </portType>
 <binding name="CoreWSPortBinding" type="tns:CoreWS">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
+<operation name="RESET">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="GET">
 <soap:operation soapAction="" />
 <input>
@@ -66,7 +135,52 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="MAKECOLL">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="REMOVECOLL">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="GETCOLL">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="INSERTCOLL">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="STORE">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="DELETECOLL">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

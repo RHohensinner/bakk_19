@@ -30,9 +30,9 @@
 	 // TODO initialize WS operation arguments here
 	java.lang.String content = json_content;
 	// TODO process result here
-	int result = port.store(content);
+	String result = port.store(content);
         //out.println(content);
-	out.println("Result = " + result);
+	out.println("Result: " + result);
     } catch (Exception ex) {
 	// TODO handle custom exceptions here
     }

@@ -13,33 +13,37 @@ and open the template in the editor.
     <body>
         <h1>Welcome to Ikarus DBEngine!</h1>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/store.html';" value="Store" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/store.html';" value="STORE" />
         
         <br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/get.html';" value="Get" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/get.html';" value="GET" />
                 
         <br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/delete.html';" value="Delete" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/delete.html';" value="DELETE" />
                 
-        <br>
+        <br><br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/makecoll.html';" value="Make S-Collection" />
-        
-        <br>
-        
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/deletecoll.html';" value="Delete S-Collection" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/makecoll.html';" value="MAKECOLL" />
         
         <br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/insert.html';" value="Insert into S-Collection" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/deletecoll.html';" value="DELETECOLL" />
         
         <br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/remove.html';" value="Remove from S-Collection" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/insert.html';" value="INSERTCOLL" />
         
         <br>
         
-        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/reset.html';" value="RESET" />
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/remove.html';" value="REMOVECOLL" />
+        
+        <br>
+        
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/getcoll.html';" value="GETCOLL" />
+        
+        <br> <br> <br>
+        
+        <input type="button" onclick="location.href='http://localhost:8080/IkarusDBEngineClient/reset.html';" value="RESET DB" />
 </html>

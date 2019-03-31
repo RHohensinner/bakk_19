@@ -17,7 +17,8 @@ import org.json.simple.JSONObject;
  */
 
 @WebService(serviceName = "CoreWS")
-public class CoreWS {
+public class CoreWS 
+{
 
     /**
      * This is a sample web service operation
@@ -31,15 +32,18 @@ public class CoreWS {
      * Web service operation
      */
     @WebMethod(operationName = "STORE")
-    public int STORE(@WebParam(name = "content") String content) 
+    public String STORE(@WebParam(name = "content") String content) 
     {
-        System.out.println("before insert:");
-        Main.getInstance().printAllJson();
+        if(content == null)
+        {
+            return "content NULL";
+        }
         
-        int new_id = Main.getInstance().getNewJsonId();
+        String new_id = Main.getInstance().getNewJsonId();
         Main.getInstance().addNewJson(new_id, content);
         
-        System.out.println("after insert:");
+        // server log:
+        System.out.println("STORE: " + new_id + " " + content);
         
         return new_id;
     }
@@ -48,9 +52,17 @@ public class CoreWS {
      * Web service operation
      */
     @WebMethod(operationName = "GET")
-    public String GET(@WebParam(name = "id") int id) 
-    {
+    public String GET(@WebParam(name = "id") String id) 
+    {   
+        if(id == null)
+        {
+            return "id NULL";
+        }
+        
         String found_json = Main.getInstance().findJson(id);
+        
+        // server log:
+        System.out.println("GET: " + id + " " + found_json);
         
         return found_json;
     }
@@ -59,21 +71,138 @@ public class CoreWS {
      * Web service operation
      */
     @WebMethod(operationName = "DELETE")
-    public Boolean DELETE(@WebParam(name = "id") int id) 
+    public String DELETE(@WebParam(name = "id") String id) 
     {
+        if(id == null)
+        {
+            return "id NULL";
+        }
+        
         String found_json = Main.getInstance().findJson(id);
         
-        Main.getInstance().printAllJson();
+        // server log:
+        System.out.println("DELETE: " + id + " " + found_json);
         
         if(found_json != null)
         {
             Main.getInstance().removeJson(id);
-            return true;
+            return id + " deleted";
         }
         else
         {
-            return false;
+            return null;
         }
     }
 
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "MAKECOLL")
+    public String MAKECOLL(@WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    {
+        if(id == null || name == null)
+        {
+            return "id or name NULL";
+        }
+        
+        String ret_str = Main.getInstance().makeNewScoll(name, id);
+        
+        // server log:
+        System.out.println("MAKECOLL: " + ret_str);
+        
+        return ret_str;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "DELETECOLL")
+    public String DELETECOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    {
+        if(sid == null || name == null)
+        {
+            return "sid or name NULL";
+        }
+        
+        String ret_str = Main.getInstance().deleteScoll(sid, name);
+        
+        // server log:
+        System.out.println("DELETECOLL: " + ret_str);
+        
+        return ret_str;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "INSERTCOLL")
+    public String INSERTCOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    {
+        if(sid == null || name == null || id == null)
+        {
+            return "sid or name or id NULL";
+        }
+        
+        String ret_str = Main.getInstance().insertScoll(sid, name, id);
+        
+        // server log:
+        System.out.println("INSERTCOLL: " + ret_str);
+        
+        return ret_str;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "REMOVECOLL")
+    public String REMOVECOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    {
+        if(sid == null || name == null || id == null)
+        {
+            return "sid or name or id NULL";
+        }
+        
+        String ret_str = Main.getInstance().removeScoll(sid, name, id);
+        
+        // server log:
+        System.out.println("REMOVECOLL: " + ret_str);
+        
+        return ret_str;
+    }
+    
+     /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "GETCOLL")
+    public String GETCOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    {
+        if(sid == null || name == null)
+        {
+            return "sid or name or id NULL";
+        }
+        
+        String ret_str = Main.getInstance().getScoll(sid, name);
+        
+        // server log:
+        System.out.println("GETCOLL: " + ret_str);
+        
+        return ret_str;
+    }
+    
+    /**
+    * Web service operation
+    */
+    @WebMethod(operationName = "RESET")
+    public String RESET(@WebParam(name = "doom") String doom) 
+    {
+        if(doom.equals("IKnowWhatIamDoing"))
+        {
+            Main.getInstance().resetDB();
+            return "Database was successfully cleared!";
+        }
+        else
+        {
+            return null;
+        }  
+    }
 }

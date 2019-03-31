@@ -6,22 +6,21 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Insert HTML</title>
+        <title>InsertColl HTML</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
         
-        <h1>Please provide a JSON file to store</h1>
-        <form action="http://localhost:8080/IkarusDBEngineClient/insert.jsp" id="storeform" method="post">
-        <input type="text" name="json_id" id="jsonId" value="Enter ID">
-        <input type="submit" value="Submit">
+        <h1>Please provide S-Collection ID, S-Collection name and JSON ID</h1>
+        <form action="http://localhost:8080/IkarusDBEngineClient/insert.jsp" id="insertform" method="post">
+            S-Coll ID: <br><input type="text" name="sid" id="sid" value=""> (e.g. s-000001)<br><br>
+            S-Coll Name: <br><input type="text" name="name" id="name" value=""> (e.g. "example1")<br><br>
+            JSON ID: <br><input type="number" name="id" id="id" value=""> (e.g. 000001)<br><br>
         </form>
         
+        <input type="submit" value="Submit" form="insertform">
         
-        
-        <br>
-
         
         <button onclick="goBack()">Back</button>
 

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>GetColl HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <h1>Please provide S-Collection ID and S-Collection name</h1>
+        <form action="http://localhost:8080/IkarusDBEngineClient/getcoll.jsp" id="getcollform" method="post">
+            S-Coll ID: <br><input type="text" name="sid" id="sid" value=""> (e.g. s-000001)<br><br>
+            S-Coll Name: <br><input type="text" name="name" id="name" value=""> (e.g. "example1")<br><br>
+        </form>
+        
+        <input type="submit" value="Submit" form="getcollform">
+        
+        
+        <button onclick="goBack()">Back</button>
+
+        <script>
+        function goBack() {
+             window.history.back();
+        }
+        </script> 
+    </body>
+</html>
