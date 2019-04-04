@@ -77,6 +77,12 @@ public class Main
     public void resetDB()
     {
         json_map.clear();
+        coll_name_map.clear();
+        s_coll_map.clear();
+        JsonIds = 0;
+        ScollIds = 0;
+        JsonStringId = "";
+        ScollStringId = "";
     }
     
     public String makeNewScoll(String name, String id)
@@ -127,7 +133,7 @@ public class Main
             coll_name_map.remove(sid);
         }
         
-        return sid + "(" + name + ")";
+        return sid + "(" + name + ")" + " deleted";
     }
     
     public String insertScoll(String sid, String name, String id)

@@ -5,8 +5,6 @@
 --%>
 
 <%@page import="java.io.FileReader"%>
-<%@page import="org.json.simple.parser.JSONParser"%>
-<%@page import="org.json.simple.JSONObject"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

@@ -44,7 +44,7 @@
     </target>
     <target name="wsimport-client-CoreWS_1" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/CoreWS_1"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CoreWS_1" destdir="${build.generated.dir}/jax-wsCache/CoreWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CoreWS_1/wsdl/localhost_8080/IkarusDBEngine/TestWS.java/CoreWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?wsdl" xnocompile="true" xendorsed="true">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/CoreWS_1" destdir="${build.generated.dir}/jax-wsCache/CoreWS_1" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/CoreWS_1/wsdl/localhost_8080/IkarusDBEngine/TestWS.java/CoreWS.wsdl" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://coronet2.iicm.tugraz.at:8080/IkarusDBEngine/CoreWS?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/CoreWS_1/wsdl/localhost_8080/IkarusDBEngine/TestWS.java/CoreWS.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/CoreWS_1"/>
         </wsimport>

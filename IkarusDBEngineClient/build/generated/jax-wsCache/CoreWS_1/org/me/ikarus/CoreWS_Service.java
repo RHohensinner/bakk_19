@@ -17,7 +17,7 @@ import javax.xml.ws.WebServiceFeature;
  * Generated source version: 2.2
  * 
  */
-@WebServiceClient(name = "CoreWS", targetNamespace = "http://ikarus.me.org/", wsdlLocation = "http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?wsdl")
+@WebServiceClient(name = "CoreWS", targetNamespace = "http://ikarus.me.org/", wsdlLocation = "http://coronet2.iicm.tugraz.at:8080/IkarusDBEngine/CoreWS?wsdl")
 public class CoreWS_Service
     extends Service
 {
@@ -30,7 +30,7 @@ public class CoreWS_Service
         URL url = null;
         WebServiceException e = null;
         try {
-            url = new URL("http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?wsdl");
+            url = new URL("http://coronet2.iicm.tugraz.at:8080/IkarusDBEngine/CoreWS?wsdl");
         } catch (MalformedURLException ex) {
             e = new WebServiceException(ex);
         }

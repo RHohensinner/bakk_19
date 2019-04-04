@@ -54,7 +54,7 @@
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>wsdlLocation</wsimport-option-name>
-          <wsimport-option-value>http://localhost:8080/IkarusDBEngine/TestWS.java/CoreWS?wsdl</wsimport-option-value>
+          <wsimport-option-value>http://coronet2.iicm.tugraz.at:8080/IkarusDBEngine/CoreWS?wsdl</wsimport-option-value>
         </wsimport-option>
         <wsimport-option>
           <wsimport-option-name>xnocompile</wsimport-option-name>
