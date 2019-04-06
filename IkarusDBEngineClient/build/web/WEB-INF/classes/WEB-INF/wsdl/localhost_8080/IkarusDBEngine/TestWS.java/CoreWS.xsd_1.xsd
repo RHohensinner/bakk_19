@@ -1,79 +1,52 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ikarus.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ikarus.me.org/">
 
-<xs:element name="DELETE" type="tns:DELETE" />
+<xs:element name="delete" type="tns:delete" />
 
-<xs:element name="DELETECOLL" type="tns:DELETECOLL" />
+<xs:element name="deleteResponse" type="tns:deleteResponse" />
 
-<xs:element name="DELETECOLLResponse" type="tns:DELETECOLLResponse" />
+<xs:element name="deletecoll" type="tns:deletecoll" />
 
-<xs:element name="DELETEResponse" type="tns:DELETEResponse" />
+<xs:element name="deletecollResponse" type="tns:deletecollResponse" />
 
-<xs:element name="GET" type="tns:GET" />
+<xs:element name="get" type="tns:get" />
 
-<xs:element name="GETCOLL" type="tns:GETCOLL" />
+<xs:element name="getResponse" type="tns:getResponse" />
 
-<xs:element name="GETCOLLResponse" type="tns:GETCOLLResponse" />
+<xs:element name="getcoll" type="tns:getcoll" />
 
-<xs:element name="GETResponse" type="tns:GETResponse" />
-
-<xs:element name="INSERTCOLL" type="tns:INSERTCOLL" />
-
-<xs:element name="INSERTCOLLResponse" type="tns:INSERTCOLLResponse" />
-
-<xs:element name="MAKECOLL" type="tns:MAKECOLL" />
-
-<xs:element name="MAKECOLLResponse" type="tns:MAKECOLLResponse" />
-
-<xs:element name="REMOVECOLL" type="tns:REMOVECOLL" />
-
-<xs:element name="REMOVECOLLResponse" type="tns:REMOVECOLLResponse" />
-
-<xs:element name="RESET" type="tns:RESET" />
-
-<xs:element name="RESETResponse" type="tns:RESETResponse" />
-
-<xs:element name="STORE" type="tns:STORE" />
-
-<xs:element name="STOREResponse" type="tns:STOREResponse" />
+<xs:element name="getcollResponse" type="tns:getcollResponse" />
 
 <xs:element name="hello" type="tns:hello" />
 
 <xs:element name="helloResponse" type="tns:helloResponse" />
 
-<xs:complexType name="GETCOLL">
+<xs:element name="insertcoll" type="tns:insertcoll" />
+
+<xs:element name="insertcollResponse" type="tns:insertcollResponse" />
+
+<xs:element name="makecoll" type="tns:makecoll" />
+
+<xs:element name="makecollResponse" type="tns:makecollResponse" />
+
+<xs:element name="removecoll" type="tns:removecoll" />
+
+<xs:element name="removecollResponse" type="tns:removecollResponse" />
+
+<xs:element name="reset" type="tns:reset" />
+
+<xs:element name="resetResponse" type="tns:resetResponse" />
+
+<xs:element name="store" type="tns:store" />
+
+<xs:element name="storeResponse" type="tns:storeResponse" />
+
+<xs:complexType name="store">
 <xs:sequence>
-<xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="content" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="GETCOLLResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="RESET">
-<xs:sequence>
-<xs:element name="doom" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="RESETResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="REMOVECOLL">
-<xs:sequence>
-<xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
-<xs:element name="id" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="REMOVECOLLResponse">
+<xs:complexType name="storeResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
@@ -91,57 +64,20 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="STORE">
-<xs:sequence>
-<xs:element name="content" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="STOREResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="DELETECOLL">
-<xs:sequence>
-<xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="DELETECOLLResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="MAKECOLL">
+<xs:complexType name="makecoll">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0" />
 <xs:element name="id" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="MAKECOLLResponse">
+<xs:complexType name="makecollResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="DELETE">
-<xs:sequence>
-<xs:element name="id" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="DELETEResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="INSERTCOLL">
+<xs:complexType name="insertcoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
 <xs:element name="name" type="xs:string" minOccurs="0" />
@@ -149,19 +85,83 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="INSERTCOLLResponse">
+<xs:complexType name="insertcollResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="GET">
+<xs:complexType name="reset">
+<xs:sequence>
+<xs:element name="doom" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="resetResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removecoll">
+<xs:sequence>
+<xs:element name="sid" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="removecollResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getcoll">
+<xs:sequence>
+<xs:element name="sid" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getcollResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="delete">
 <xs:sequence>
 <xs:element name="id" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="GETResponse">
+<xs:complexType name="deleteResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletecoll">
+<xs:sequence>
+<xs:element name="sid" type="xs:string" minOccurs="0" />
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deletecollResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="get">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

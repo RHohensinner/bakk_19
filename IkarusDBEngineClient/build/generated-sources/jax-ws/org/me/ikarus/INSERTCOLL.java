@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für INSERTCOLL complex type.
+ * <p>Java-Klasse für insertcoll complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="INSERTCOLL">
+ * &lt;complexType name="insertcoll">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,12 +28,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "INSERTCOLL", propOrder = {
+@XmlType(name = "insertcoll", propOrder = {
     "sid",
     "name",
     "id"
 })
-public class INSERTCOLL {
+public class Insertcoll {
 
     protected String sid;
     protected String name;

@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für DELETECOLL complex type.
+ * <p>Java-Klasse für deletecoll complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="DELETECOLL">
+ * &lt;complexType name="deletecoll">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "DELETECOLL", propOrder = {
+@XmlType(name = "deletecoll", propOrder = {
     "sid",
     "name"
 })
-public class DELETECOLL {
+public class Deletecoll {
 
     protected String sid;
     protected String name;

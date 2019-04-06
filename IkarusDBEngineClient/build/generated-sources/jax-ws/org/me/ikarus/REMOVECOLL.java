@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für REMOVECOLL complex type.
+ * <p>Java-Klasse für removecoll complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="REMOVECOLL">
+ * &lt;complexType name="removecoll">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -28,12 +28,12 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "REMOVECOLL", propOrder = {
+@XmlType(name = "removecoll", propOrder = {
     "sid",
     "name",
     "id"
 })
-public class REMOVECOLL {
+public class Removecoll {
 
     protected String sid;
     protected String name;

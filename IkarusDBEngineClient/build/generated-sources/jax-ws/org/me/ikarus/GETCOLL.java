@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für GETCOLL complex type.
+ * <p>Java-Klasse für getcoll complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="GETCOLL">
+ * &lt;complexType name="getcoll">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GETCOLL", propOrder = {
+@XmlType(name = "getcoll", propOrder = {
     "sid",
     "name"
 })
-public class GETCOLL {
+public class Getcoll {
 
     protected String sid;
     protected String name;

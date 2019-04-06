@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für GETCOLLResponse complex type.
+ * <p>Java-Klasse für getcollResponse complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="GETCOLLResponse">
+ * &lt;complexType name="getcollResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "GETCOLLResponse", propOrder = {
+@XmlType(name = "getcollResponse", propOrder = {
     "_return"
 })
-public class GETCOLLResponse {
+public class GetcollResponse {
 
     @XmlElement(name = "return")
     protected String _return;

@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für REMOVECOLLResponse complex type.
+ * <p>Java-Klasse für removecollResponse complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="REMOVECOLLResponse">
+ * &lt;complexType name="removecollResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "REMOVECOLLResponse", propOrder = {
+@XmlType(name = "removecollResponse", propOrder = {
     "_return"
 })
-public class REMOVECOLLResponse {
+public class RemovecollResponse {
 
     @XmlElement(name = "return")
     protected String _return;

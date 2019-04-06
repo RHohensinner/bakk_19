@@ -30,8 +30,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "STORE")
-    public String STORE(@WebParam(name = "content") String content) 
+    @WebMethod(operationName = "store")
+    public String store(@WebParam(name = "content") String content) 
     {
         if(content == null)
         {
@@ -50,8 +50,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "GET")
-    public String GET(@WebParam(name = "id") String id) 
+    @WebMethod(operationName = "get")
+    public String get(@WebParam(name = "id") String id) 
     {   
         if(id == null)
         {
@@ -69,8 +69,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "DELETE")
-    public String DELETE(@WebParam(name = "id") String id) 
+    @WebMethod(operationName = "delete")
+    public String delete(@WebParam(name = "id") String id) 
     {
         if(id == null)
         {
@@ -96,8 +96,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "MAKECOLL")
-    public String MAKECOLL(@WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    @WebMethod(operationName = "makecoll")
+    public String makecoll(@WebParam(name = "name") String name, @WebParam(name = "id") String id) 
     {
         if(id == null || name == null)
         {
@@ -115,8 +115,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "DELETECOLL")
-    public String DELETECOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    @WebMethod(operationName = "deletecoll")
+    public String deletecoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
     {
         if(sid == null || name == null)
         {
@@ -134,8 +134,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "INSERTCOLL")
-    public String INSERTCOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    @WebMethod(operationName = "insertcoll")
+    public String insertcoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
     {
         if(sid == null || name == null || id == null)
         {
@@ -153,8 +153,8 @@ public class CoreWS
     /**
      * Web service operation
      */
-    @WebMethod(operationName = "REMOVECOLL")
-    public String REMOVECOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    @WebMethod(operationName = "removecoll")
+    public String remove(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
     {
         if(sid == null || name == null || id == null)
         {
@@ -172,8 +172,8 @@ public class CoreWS
      /**
      * Web service operation
      */
-    @WebMethod(operationName = "GETCOLL")
-    public String GETCOLL(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    @WebMethod(operationName = "getcoll")
+    public String getcoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
     {
         if(sid == null || name == null)
         {
@@ -191,8 +191,8 @@ public class CoreWS
     /**
     * Web service operation
     */
-    @WebMethod(operationName = "RESET")
-    public String RESET(@WebParam(name = "doom") String doom) 
+    @WebMethod(operationName = "reset")
+    public String reset(@WebParam(name = "doom") String doom) 
     {
         if(doom.equals("IKnowWhatIamDoing"))
         {

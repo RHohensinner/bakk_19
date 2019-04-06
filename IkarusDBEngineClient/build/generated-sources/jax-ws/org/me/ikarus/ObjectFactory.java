@@ -24,26 +24,26 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GETCOLLResponse_QNAME = new QName("http://ikarus.me.org/", "GETCOLLResponse");
-    private final static QName _INSERTCOLL_QNAME = new QName("http://ikarus.me.org/", "INSERTCOLL");
-    private final static QName _RESETResponse_QNAME = new QName("http://ikarus.me.org/", "RESETResponse");
-    private final static QName _STOREResponse_QNAME = new QName("http://ikarus.me.org/", "STOREResponse");
-    private final static QName _MAKECOLL_QNAME = new QName("http://ikarus.me.org/", "MAKECOLL");
-    private final static QName _RESET_QNAME = new QName("http://ikarus.me.org/", "RESET");
-    private final static QName _DELETECOLLResponse_QNAME = new QName("http://ikarus.me.org/", "DELETECOLLResponse");
-    private final static QName _DELETECOLL_QNAME = new QName("http://ikarus.me.org/", "DELETECOLL");
-    private final static QName _GETResponse_QNAME = new QName("http://ikarus.me.org/", "GETResponse");
-    private final static QName _GET_QNAME = new QName("http://ikarus.me.org/", "GET");
+    private final static QName _GetResponse_QNAME = new QName("http://ikarus.me.org/", "getResponse");
+    private final static QName _Deletecoll_QNAME = new QName("http://ikarus.me.org/", "deletecoll");
+    private final static QName _Getcoll_QNAME = new QName("http://ikarus.me.org/", "getcoll");
+    private final static QName _Delete_QNAME = new QName("http://ikarus.me.org/", "delete");
+    private final static QName _DeletecollResponse_QNAME = new QName("http://ikarus.me.org/", "deletecollResponse");
+    private final static QName _GetcollResponse_QNAME = new QName("http://ikarus.me.org/", "getcollResponse");
+    private final static QName _Makecoll_QNAME = new QName("http://ikarus.me.org/", "makecoll");
+    private final static QName _Store_QNAME = new QName("http://ikarus.me.org/", "store");
+    private final static QName _ResetResponse_QNAME = new QName("http://ikarus.me.org/", "resetResponse");
+    private final static QName _StoreResponse_QNAME = new QName("http://ikarus.me.org/", "storeResponse");
+    private final static QName _Get_QNAME = new QName("http://ikarus.me.org/", "get");
+    private final static QName _MakecollResponse_QNAME = new QName("http://ikarus.me.org/", "makecollResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://ikarus.me.org/", "helloResponse");
-    private final static QName _INSERTCOLLResponse_QNAME = new QName("http://ikarus.me.org/", "INSERTCOLLResponse");
-    private final static QName _DELETEResponse_QNAME = new QName("http://ikarus.me.org/", "DELETEResponse");
-    private final static QName _DELETE_QNAME = new QName("http://ikarus.me.org/", "DELETE");
-    private final static QName _REMOVECOLLResponse_QNAME = new QName("http://ikarus.me.org/", "REMOVECOLLResponse");
-    private final static QName _REMOVECOLL_QNAME = new QName("http://ikarus.me.org/", "REMOVECOLL");
+    private final static QName _DeleteResponse_QNAME = new QName("http://ikarus.me.org/", "deleteResponse");
+    private final static QName _InsertcollResponse_QNAME = new QName("http://ikarus.me.org/", "insertcollResponse");
+    private final static QName _Removecoll_QNAME = new QName("http://ikarus.me.org/", "removecoll");
+    private final static QName _RemovecollResponse_QNAME = new QName("http://ikarus.me.org/", "removecollResponse");
     private final static QName _Hello_QNAME = new QName("http://ikarus.me.org/", "hello");
-    private final static QName _GETCOLL_QNAME = new QName("http://ikarus.me.org/", "GETCOLL");
-    private final static QName _MAKECOLLResponse_QNAME = new QName("http://ikarus.me.org/", "MAKECOLLResponse");
-    private final static QName _STORE_QNAME = new QName("http://ikarus.me.org/", "STORE");
+    private final static QName _Reset_QNAME = new QName("http://ikarus.me.org/", "reset");
+    private final static QName _Insertcoll_QNAME = new QName("http://ikarus.me.org/", "insertcoll");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.me.ikarus
@@ -53,99 +53,107 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link RESETResponse }
+     * Create an instance of {@link Deletecoll }
      * 
      */
-    public RESETResponse createRESETResponse() {
-        return new RESETResponse();
+    public Deletecoll createDeletecoll() {
+        return new Deletecoll();
     }
 
     /**
-     * Create an instance of {@link STOREResponse }
+     * Create an instance of {@link GetResponse }
      * 
      */
-    public STOREResponse createSTOREResponse() {
-        return new STOREResponse();
+    public GetResponse createGetResponse() {
+        return new GetResponse();
     }
 
     /**
-     * Create an instance of {@link GETCOLLResponse }
+     * Create an instance of {@link ResetResponse }
      * 
      */
-    public GETCOLLResponse createGETCOLLResponse() {
-        return new GETCOLLResponse();
+    public ResetResponse createResetResponse() {
+        return new ResetResponse();
     }
 
     /**
-     * Create an instance of {@link INSERTCOLL }
+     * Create an instance of {@link StoreResponse }
      * 
      */
-    public INSERTCOLL createINSERTCOLL() {
-        return new INSERTCOLL();
+    public StoreResponse createStoreResponse() {
+        return new StoreResponse();
     }
 
     /**
-     * Create an instance of {@link DELETECOLL }
+     * Create an instance of {@link Makecoll }
      * 
      */
-    public DELETECOLL createDELETECOLL() {
-        return new DELETECOLL();
+    public Makecoll createMakecoll() {
+        return new Makecoll();
     }
 
     /**
-     * Create an instance of {@link GETResponse }
+     * Create an instance of {@link Store }
      * 
      */
-    public GETResponse createGETResponse() {
-        return new GETResponse();
+    public Store createStore() {
+        return new Store();
     }
 
     /**
-     * Create an instance of {@link DELETECOLLResponse }
+     * Create an instance of {@link DeletecollResponse }
      * 
      */
-    public DELETECOLLResponse createDELETECOLLResponse() {
-        return new DELETECOLLResponse();
+    public DeletecollResponse createDeletecollResponse() {
+        return new DeletecollResponse();
     }
 
     /**
-     * Create an instance of {@link RESET }
+     * Create an instance of {@link GetcollResponse }
      * 
      */
-    public RESET createRESET() {
-        return new RESET();
+    public GetcollResponse createGetcollResponse() {
+        return new GetcollResponse();
     }
 
     /**
-     * Create an instance of {@link MAKECOLL }
+     * Create an instance of {@link Delete }
      * 
      */
-    public MAKECOLL createMAKECOLL() {
-        return new MAKECOLL();
+    public Delete createDelete() {
+        return new Delete();
     }
 
     /**
-     * Create an instance of {@link DELETE }
+     * Create an instance of {@link Getcoll }
      * 
      */
-    public DELETE createDELETE() {
-        return new DELETE();
+    public Getcoll createGetcoll() {
+        return new Getcoll();
     }
 
     /**
-     * Create an instance of {@link DELETEResponse }
+     * Create an instance of {@link Removecoll }
      * 
      */
-    public DELETEResponse createDELETEResponse() {
-        return new DELETEResponse();
+    public Removecoll createRemovecoll() {
+        return new Removecoll();
     }
 
     /**
-     * Create an instance of {@link INSERTCOLLResponse }
+     * Create an instance of {@link InsertcollResponse }
      * 
      */
-    public INSERTCOLLResponse createINSERTCOLLResponse() {
-        return new INSERTCOLLResponse();
+    public InsertcollResponse createInsertcollResponse() {
+        return new InsertcollResponse();
+    }
+
+    /**
+     * Create an instance of {@link DeleteResponse }
+     * 
+     */
+    public DeleteResponse createDeleteResponse() {
+        return new DeleteResponse();
     }
 
     /**
@@ -157,43 +165,35 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GET }
+     * Create an instance of {@link Get }
      * 
      */
-    public GET createGET() {
-        return new GET();
+    public Get createGet() {
+        return new Get();
     }
 
     /**
-     * Create an instance of {@link STORE }
+     * Create an instance of {@link MakecollResponse }
      * 
      */
-    public STORE createSTORE() {
-        return new STORE();
+    public MakecollResponse createMakecollResponse() {
+        return new MakecollResponse();
     }
 
     /**
-     * Create an instance of {@link GETCOLL }
+     * Create an instance of {@link Insertcoll }
      * 
      */
-    public GETCOLL createGETCOLL() {
-        return new GETCOLL();
+    public Insertcoll createInsertcoll() {
+        return new Insertcoll();
     }
 
     /**
-     * Create an instance of {@link MAKECOLLResponse }
+     * Create an instance of {@link Reset }
      * 
      */
-    public MAKECOLLResponse createMAKECOLLResponse() {
-        return new MAKECOLLResponse();
-    }
-
-    /**
-     * Create an instance of {@link REMOVECOLL }
-     * 
-     */
-    public REMOVECOLL createREMOVECOLL() {
-        return new REMOVECOLL();
+    public Reset createReset() {
+        return new Reset();
     }
 
     /**
@@ -205,101 +205,119 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link REMOVECOLLResponse }
+     * Create an instance of {@link RemovecollResponse }
      * 
      */
-    public REMOVECOLLResponse createREMOVECOLLResponse() {
-        return new REMOVECOLLResponse();
+    public RemovecollResponse createRemovecollResponse() {
+        return new RemovecollResponse();
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GETCOLLResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "GETCOLLResponse")
-    public JAXBElement<GETCOLLResponse> createGETCOLLResponse(GETCOLLResponse value) {
-        return new JAXBElement<GETCOLLResponse>(_GETCOLLResponse_QNAME, GETCOLLResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "getResponse")
+    public JAXBElement<GetResponse> createGetResponse(GetResponse value) {
+        return new JAXBElement<GetResponse>(_GetResponse_QNAME, GetResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link INSERTCOLL }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Deletecoll }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "INSERTCOLL")
-    public JAXBElement<INSERTCOLL> createINSERTCOLL(INSERTCOLL value) {
-        return new JAXBElement<INSERTCOLL>(_INSERTCOLL_QNAME, INSERTCOLL.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "deletecoll")
+    public JAXBElement<Deletecoll> createDeletecoll(Deletecoll value) {
+        return new JAXBElement<Deletecoll>(_Deletecoll_QNAME, Deletecoll.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RESETResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Getcoll }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "RESETResponse")
-    public JAXBElement<RESETResponse> createRESETResponse(RESETResponse value) {
-        return new JAXBElement<RESETResponse>(_RESETResponse_QNAME, RESETResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "getcoll")
+    public JAXBElement<Getcoll> createGetcoll(Getcoll value) {
+        return new JAXBElement<Getcoll>(_Getcoll_QNAME, Getcoll.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link STOREResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Delete }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "STOREResponse")
-    public JAXBElement<STOREResponse> createSTOREResponse(STOREResponse value) {
-        return new JAXBElement<STOREResponse>(_STOREResponse_QNAME, STOREResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "delete")
+    public JAXBElement<Delete> createDelete(Delete value) {
+        return new JAXBElement<Delete>(_Delete_QNAME, Delete.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MAKECOLL }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeletecollResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "MAKECOLL")
-    public JAXBElement<MAKECOLL> createMAKECOLL(MAKECOLL value) {
-        return new JAXBElement<MAKECOLL>(_MAKECOLL_QNAME, MAKECOLL.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "deletecollResponse")
+    public JAXBElement<DeletecollResponse> createDeletecollResponse(DeletecollResponse value) {
+        return new JAXBElement<DeletecollResponse>(_DeletecollResponse_QNAME, DeletecollResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RESET }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link GetcollResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "RESET")
-    public JAXBElement<RESET> createRESET(RESET value) {
-        return new JAXBElement<RESET>(_RESET_QNAME, RESET.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "getcollResponse")
+    public JAXBElement<GetcollResponse> createGetcollResponse(GetcollResponse value) {
+        return new JAXBElement<GetcollResponse>(_GetcollResponse_QNAME, GetcollResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DELETECOLLResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Makecoll }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "DELETECOLLResponse")
-    public JAXBElement<DELETECOLLResponse> createDELETECOLLResponse(DELETECOLLResponse value) {
-        return new JAXBElement<DELETECOLLResponse>(_DELETECOLLResponse_QNAME, DELETECOLLResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "makecoll")
+    public JAXBElement<Makecoll> createMakecoll(Makecoll value) {
+        return new JAXBElement<Makecoll>(_Makecoll_QNAME, Makecoll.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DELETECOLL }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Store }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "DELETECOLL")
-    public JAXBElement<DELETECOLL> createDELETECOLL(DELETECOLL value) {
-        return new JAXBElement<DELETECOLL>(_DELETECOLL_QNAME, DELETECOLL.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "store")
+    public JAXBElement<Store> createStore(Store value) {
+        return new JAXBElement<Store>(_Store_QNAME, Store.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GETResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link ResetResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "GETResponse")
-    public JAXBElement<GETResponse> createGETResponse(GETResponse value) {
-        return new JAXBElement<GETResponse>(_GETResponse_QNAME, GETResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "resetResponse")
+    public JAXBElement<ResetResponse> createResetResponse(ResetResponse value) {
+        return new JAXBElement<ResetResponse>(_ResetResponse_QNAME, ResetResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GET }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link StoreResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "GET")
-    public JAXBElement<GET> createGET(GET value) {
-        return new JAXBElement<GET>(_GET_QNAME, GET.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "storeResponse")
+    public JAXBElement<StoreResponse> createStoreResponse(StoreResponse value) {
+        return new JAXBElement<StoreResponse>(_StoreResponse_QNAME, StoreResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Get }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "get")
+    public JAXBElement<Get> createGet(Get value) {
+        return new JAXBElement<Get>(_Get_QNAME, Get.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link MakecollResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "makecollResponse")
+    public JAXBElement<MakecollResponse> createMakecollResponse(MakecollResponse value) {
+        return new JAXBElement<MakecollResponse>(_MakecollResponse_QNAME, MakecollResponse.class, null, value);
     }
 
     /**
@@ -312,48 +330,39 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link INSERTCOLLResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link DeleteResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "INSERTCOLLResponse")
-    public JAXBElement<INSERTCOLLResponse> createINSERTCOLLResponse(INSERTCOLLResponse value) {
-        return new JAXBElement<INSERTCOLLResponse>(_INSERTCOLLResponse_QNAME, INSERTCOLLResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "deleteResponse")
+    public JAXBElement<DeleteResponse> createDeleteResponse(DeleteResponse value) {
+        return new JAXBElement<DeleteResponse>(_DeleteResponse_QNAME, DeleteResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DELETEResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link InsertcollResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "DELETEResponse")
-    public JAXBElement<DELETEResponse> createDELETEResponse(DELETEResponse value) {
-        return new JAXBElement<DELETEResponse>(_DELETEResponse_QNAME, DELETEResponse.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "insertcollResponse")
+    public JAXBElement<InsertcollResponse> createInsertcollResponse(InsertcollResponse value) {
+        return new JAXBElement<InsertcollResponse>(_InsertcollResponse_QNAME, InsertcollResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link DELETE }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Removecoll }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "DELETE")
-    public JAXBElement<DELETE> createDELETE(DELETE value) {
-        return new JAXBElement<DELETE>(_DELETE_QNAME, DELETE.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "removecoll")
+    public JAXBElement<Removecoll> createRemovecoll(Removecoll value) {
+        return new JAXBElement<Removecoll>(_Removecoll_QNAME, Removecoll.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link REMOVECOLLResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link RemovecollResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "REMOVECOLLResponse")
-    public JAXBElement<REMOVECOLLResponse> createREMOVECOLLResponse(REMOVECOLLResponse value) {
-        return new JAXBElement<REMOVECOLLResponse>(_REMOVECOLLResponse_QNAME, REMOVECOLLResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link REMOVECOLL }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "REMOVECOLL")
-    public JAXBElement<REMOVECOLL> createREMOVECOLL(REMOVECOLL value) {
-        return new JAXBElement<REMOVECOLL>(_REMOVECOLL_QNAME, REMOVECOLL.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "removecollResponse")
+    public JAXBElement<RemovecollResponse> createRemovecollResponse(RemovecollResponse value) {
+        return new JAXBElement<RemovecollResponse>(_RemovecollResponse_QNAME, RemovecollResponse.class, null, value);
     }
 
     /**
@@ -366,30 +375,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GETCOLL }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Reset }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "GETCOLL")
-    public JAXBElement<GETCOLL> createGETCOLL(GETCOLL value) {
-        return new JAXBElement<GETCOLL>(_GETCOLL_QNAME, GETCOLL.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "reset")
+    public JAXBElement<Reset> createReset(Reset value) {
+        return new JAXBElement<Reset>(_Reset_QNAME, Reset.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link MAKECOLLResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Insertcoll }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "MAKECOLLResponse")
-    public JAXBElement<MAKECOLLResponse> createMAKECOLLResponse(MAKECOLLResponse value) {
-        return new JAXBElement<MAKECOLLResponse>(_MAKECOLLResponse_QNAME, MAKECOLLResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link STORE }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "STORE")
-    public JAXBElement<STORE> createSTORE(STORE value) {
-        return new JAXBElement<STORE>(_STORE_QNAME, STORE.class, null, value);
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "insertcoll")
+    public JAXBElement<Insertcoll> createInsertcoll(Insertcoll value) {
+        return new JAXBElement<Insertcoll>(_Insertcoll_QNAME, Insertcoll.class, null, value);
     }
 
 }

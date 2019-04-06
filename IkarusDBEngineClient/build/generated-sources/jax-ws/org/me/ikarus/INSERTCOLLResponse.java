@@ -8,12 +8,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für INSERTCOLLResponse complex type.
+ * <p>Java-Klasse für insertcollResponse complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="INSERTCOLLResponse">
+ * &lt;complexType name="insertcollResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,10 +27,10 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "INSERTCOLLResponse", propOrder = {
+@XmlType(name = "insertcollResponse", propOrder = {
     "_return"
 })
-public class INSERTCOLLResponse {
+public class InsertcollResponse {
 
     @XmlElement(name = "return")
     protected String _return;

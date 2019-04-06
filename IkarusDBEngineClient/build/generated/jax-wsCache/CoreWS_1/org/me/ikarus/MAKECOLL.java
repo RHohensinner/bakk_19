@@ -7,12 +7,12 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für MAKECOLL complex type.
+ * <p>Java-Klasse für makecoll complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="MAKECOLL">
+ * &lt;complexType name="makecoll">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
@@ -27,11 +27,11 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "MAKECOLL", propOrder = {
+@XmlType(name = "makecoll", propOrder = {
     "name",
     "id"
 })
-public class MAKECOLL {
+public class Makecoll {
 
     protected String name;
     protected String id;
