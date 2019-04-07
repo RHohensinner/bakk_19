@@ -52,18 +52,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="hello">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="helloResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="makecoll">
 <xs:sequence>
 <xs:element name="name" type="xs:string" minOccurs="0" />
@@ -77,10 +65,21 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="hello">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="helloResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="insertcoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
 <xs:element name="id" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
@@ -106,7 +105,6 @@
 <xs:complexType name="removecoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
 <xs:element name="id" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
@@ -120,7 +118,6 @@
 <xs:complexType name="getcoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
@@ -145,7 +142,6 @@
 <xs:complexType name="deletecoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
-<xs:element name="name" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 

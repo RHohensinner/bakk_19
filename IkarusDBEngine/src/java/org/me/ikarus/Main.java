@@ -74,16 +74,7 @@ public class Main
         json_map.remove(id);
     }
     
-    public void resetDB()
-    {
-        json_map.clear();
-        coll_name_map.clear();
-        s_coll_map.clear();
-        JsonIds = 0;
-        ScollIds = 0;
-        JsonStringId = "";
-        ScollStringId = "";
-    }
+    //--------------------------------------------------------------------------
     
     public String makeNewScoll(String name, String id)
     {
@@ -101,7 +92,7 @@ public class Main
         
         if(json_map.containsKey(id))
         {
-            SCollection new_coll = new SCollection(id);
+            SCollection new_coll = new SCollection(id, name);
             s_coll_map.put(id, new_coll);
         }
         else
@@ -120,14 +111,17 @@ public class Main
         return ScollStringId;
     }
     
-    public String deleteScoll(String sid, String name)
+    public String deleteScoll(String sid)
     {
+        String name;
+        
         if(!coll_name_map.containsKey(sid))
         {
             return "ERR: S-COLL. TO BE DELEATED DOESN'T EXIST!";
         }
         else
         {
+            name = coll_name_map.get(sid);
             s_coll_map.get(sid).s_vector.clear();
             s_coll_map.remove(sid);
             coll_name_map.remove(sid);
@@ -136,11 +130,9 @@ public class Main
         return sid + "(" + name + ")" + " deleted";
     }
     
-    public String insertScoll(String sid, String name, String id)
+    public String insertScoll(String sid, String id)
     {
-        //System.out.println(sid);
-        //System.out.println(s_coll_map);
-        //System.out.println(coll_name_map);
+        String name;
         
         if(!coll_name_map.containsKey(sid))
         {
@@ -148,42 +140,70 @@ public class Main
         }
         else
         {
+            if(!json_map.containsKey(id))
+            {
+               return "ERR: INVALID JSON ID!"; 
+            }
+            name = coll_name_map.get(sid);
             
-            //System.out.println(test.size());
-            s_coll_map.get(sid).s_vector.add(s_coll_map.get(sid).s_vector.size(), id);
-            return id + " successfully inserted into: " + sid + "(" + name + ")!";
+            if(!s_coll_map.get(sid).s_vector.contains(id))
+            {
+                s_coll_map.get(sid).s_vector.add(s_coll_map.get(sid).s_vector.size(), id);
+                return id + " successfully inserted into: " + sid + "(" + name + ")!";   
+            }
+            else
+            {
+                return "ERR: JSON ID IS ALREADY MEMEBER OF S-COLL.!";   
+            }
+            
         }
     }
     
-    public String removeScoll(String sid, String name, String id)
+    public String removeScoll(String sid, String id)
     {
+        String name;
+        
         if(!coll_name_map.containsKey(sid))
         {
             return "ERR: S-COLL. TO BE REMOVED FROM DOESN'T EXIST!";
         }
         else
         {
+            if(!json_map.containsKey(id))
+            {
+               return "ERR: INVALID JSON ID!"; 
+            }
+            
+            name = coll_name_map.get(sid);
             System.out.println(id + s_coll_map.get(sid).headId);
             if(s_coll_map.get(sid).headId.equals(id))
             {
-                return "ERR: CANNOT REMOVE FROM S-COLL. BECAUSE OBJ. IS HEAD!(use delete coll instead)";
+                return "ERR: CANNOT REMOVE FROM S-COLL. BECAUSE OBJ. IS HEAD!(use deletecoll instead)!";
             }
             else
             {
-                s_coll_map.get(sid).s_vector.remove(id);
-                return id + " successfully removed from: " + sid + "(" + name + ")!";
+                if(s_coll_map.get(sid).s_vector.contains(id))
+                {
+                    s_coll_map.get(sid).s_vector.remove(id);
+                    return id + " successfully removed from: " + sid + "(" + name + ")!";   
+                }
+                else
+                {
+                    return "ERR: JSON ID IS NOT MEMEBER OF S-COLL.!";
+                }
+                
             }
         }
     }
     
-    public String getScoll(String sid, String name)
-    {
+    public String getScoll(String sid)
+    {   
         if(!coll_name_map.containsKey(sid))
         {
             return "ERR: S-COLL. TO BE SEARCHED DOESN'T EXIST!";
         }
         else
-        {            
+        {           
             String ret_string = "";
             int index;
             
@@ -204,6 +224,19 @@ public class Main
             
             return ret_string;
         }
+    }
+    
+    //--------------------------------------------------------------------------
+    
+    public void resetDB()
+    {
+        json_map.clear();
+        coll_name_map.clear();
+        s_coll_map.clear();
+        JsonIds = 0;
+        ScollIds = 0;
+        JsonStringId = "";
+        ScollStringId = "";
     }
     
     

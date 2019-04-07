@@ -26,7 +26,6 @@ public interface CoreWS {
 
     /**
      * 
-     * @param name
      * @param id
      * @param sid
      * @return
@@ -40,8 +39,6 @@ public interface CoreWS {
     public String removecoll(
         @WebParam(name = "sid", targetNamespace = "")
         String sid,
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
         @WebParam(name = "id", targetNamespace = "")
         String id);
 
@@ -108,21 +105,6 @@ public interface CoreWS {
     /**
      * 
      * @param name
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.HelloResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/helloRequest", output = "http://ikarus.me.org/CoreWS/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
-
-    /**
-     * 
-     * @param name
      * @param id
      * @return
      *     returns java.lang.String
@@ -140,25 +122,6 @@ public interface CoreWS {
 
     /**
      * 
-     * @param name
-     * @param sid
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deletecoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Deletecoll")
-    @ResponseWrapper(localName = "deletecollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DeletecollResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/deletecollRequest", output = "http://ikarus.me.org/CoreWS/deletecollResponse")
-    public String deletecoll(
-        @WebParam(name = "sid", targetNamespace = "")
-        String sid,
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
-
-    /**
-     * 
-     * @param name
      * @param sid
      * @return
      *     returns java.lang.String
@@ -170,13 +133,25 @@ public interface CoreWS {
     @Action(input = "http://ikarus.me.org/CoreWS/getcollRequest", output = "http://ikarus.me.org/CoreWS/getcollResponse")
     public String getcoll(
         @WebParam(name = "sid", targetNamespace = "")
-        String sid,
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+        String sid);
 
     /**
      * 
-     * @param name
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deletecoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Deletecoll")
+    @ResponseWrapper(localName = "deletecollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DeletecollResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/deletecollRequest", output = "http://ikarus.me.org/CoreWS/deletecollResponse")
+    public String deletecoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid);
+
+    /**
+     * 
      * @param id
      * @param sid
      * @return
@@ -190,9 +165,22 @@ public interface CoreWS {
     public String insertcoll(
         @WebParam(name = "sid", targetNamespace = "")
         String sid,
-        @WebParam(name = "name", targetNamespace = "")
-        String name,
         @WebParam(name = "id", targetNamespace = "")
         String id);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.HelloResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/helloRequest", output = "http://ikarus.me.org/CoreWS/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
 
 }

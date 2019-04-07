@@ -29,6 +29,9 @@
     }
     %>
     <%-- end web service invocation --%><hr/>
+    
+    <br><br>
+    <input type="button" onclick="location.href='index.html';" value="Main Menue" />
 
     </body>
 </html>

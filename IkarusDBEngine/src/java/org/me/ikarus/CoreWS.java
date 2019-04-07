@@ -116,14 +116,14 @@ public class CoreWS
      * Web service operation
      */
     @WebMethod(operationName = "deletecoll")
-    public String deletecoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    public String deletecoll(@WebParam(name = "sid") String sid) 
     {
-        if(sid == null || name == null)
+        if(sid == null)
         {
-            return "sid or name NULL";
+            return "sid NULL";
         }
         
-        String ret_str = Main.getInstance().deleteScoll(sid, name);
+        String ret_str = Main.getInstance().deleteScoll(sid);
         
         // server log:
         System.out.println("DELETECOLL: " + ret_str);
@@ -135,14 +135,14 @@ public class CoreWS
      * Web service operation
      */
     @WebMethod(operationName = "insertcoll")
-    public String insertcoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    public String insertcoll(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
     {
-        if(sid == null || name == null || id == null)
+        if(sid == null || id == null)
         {
-            return "sid or name or id NULL";
+            return "sid or id NULL";
         }
         
-        String ret_str = Main.getInstance().insertScoll(sid, name, id);
+        String ret_str = Main.getInstance().insertScoll(sid, id);
         
         // server log:
         System.out.println("INSERTCOLL: " + ret_str);
@@ -154,14 +154,14 @@ public class CoreWS
      * Web service operation
      */
     @WebMethod(operationName = "removecoll")
-    public String remove(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name, @WebParam(name = "id") String id) 
+    public String remove(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
     {
-        if(sid == null || name == null || id == null)
+        if(sid == null|| id == null)
         {
-            return "sid or name or id NULL";
+            return "sid or id NULL";
         }
         
-        String ret_str = Main.getInstance().removeScoll(sid, name, id);
+        String ret_str = Main.getInstance().removeScoll(sid, id);
         
         // server log:
         System.out.println("REMOVECOLL: " + ret_str);
@@ -173,14 +173,14 @@ public class CoreWS
      * Web service operation
      */
     @WebMethod(operationName = "getcoll")
-    public String getcoll(@WebParam(name = "sid") String sid, @WebParam(name = "name") String name) 
+    public String getcoll(@WebParam(name = "sid") String sid) 
     {
-        if(sid == null || name == null)
+        if(sid == null)
         {
-            return "sid or name or id NULL";
+            return "sid NULL";
         }
         
-        String ret_str = Main.getInstance().getScoll(sid, name);
+        String ret_str = Main.getInstance().getScoll(sid);
         
         // server log:
         System.out.println("GETCOLL: " + ret_str);

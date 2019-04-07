@@ -17,18 +17,16 @@
     <%
     try {
         String sid = request.getParameter("sid");
-        String name = request.getParameter("name");
         String id = request.getParameter("id");
         
 	org.me.ikarus.CoreWS_Service service = new org.me.ikarus.CoreWS_Service();
 	org.me.ikarus.CoreWS port = service.getCoreWSPort();
 	 // TODO initialize WS operation arguments here
 	String ssid = sid;
-        String nname = name;
         String iid = id;
         
 	// TODO process result here
-	java.lang.String result = port.removecoll(ssid, nname, iid);
+	java.lang.String result = port.removecoll(ssid, iid);
         
 	out.println("Result: "+result);
     } catch (Exception ex) {
@@ -36,6 +34,9 @@
     }
     %>
     <%-- end web service invocation --%><hr/>
+    
+    <br><br>
+    <input type="button" onclick="location.href='index.html';" value="Main Menue" />
 
     </body>
 </html>

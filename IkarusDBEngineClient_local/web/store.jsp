@@ -38,7 +38,9 @@
     }
     %>
     <%-- end web service invocation --%><hr/>
+    
+    <br><br>
+    <input type="button" onclick="location.href='index.jsp';" value="Main Menue" />
 
-        
     </body>
 </html>
