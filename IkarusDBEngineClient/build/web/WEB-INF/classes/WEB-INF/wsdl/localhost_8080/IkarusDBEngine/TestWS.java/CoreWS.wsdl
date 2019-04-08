@@ -46,17 +46,23 @@
 <message name="getcollResponse">
 <part name="parameters" element="tns:getcollResponse" />
 </message>
+<message name="insertcoll">
+<part name="parameters" element="tns:insertcoll" />
+</message>
+<message name="insertcollResponse">
+<part name="parameters" element="tns:insertcollResponse" />
+</message>
 <message name="deletecoll">
 <part name="parameters" element="tns:deletecoll" />
 </message>
 <message name="deletecollResponse">
 <part name="parameters" element="tns:deletecollResponse" />
 </message>
-<message name="insertcoll">
-<part name="parameters" element="tns:insertcoll" />
+<message name="searchobj">
+<part name="parameters" element="tns:searchobj" />
 </message>
-<message name="insertcollResponse">
-<part name="parameters" element="tns:insertcollResponse" />
+<message name="searchobjResponse">
+<part name="parameters" element="tns:searchobjResponse" />
 </message>
 <message name="hello">
 <part name="parameters" element="tns:hello" />
@@ -93,13 +99,17 @@
 <input wsam:Action="http://ikarus.me.org/CoreWS/getcollRequest" message="tns:getcoll" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/getcollResponse" message="tns:getcollResponse" />
 </operation>
+<operation name="insertcoll">
+<input wsam:Action="http://ikarus.me.org/CoreWS/insertcollRequest" message="tns:insertcoll" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/insertcollResponse" message="tns:insertcollResponse" />
+</operation>
 <operation name="deletecoll">
 <input wsam:Action="http://ikarus.me.org/CoreWS/deletecollRequest" message="tns:deletecoll" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/deletecollResponse" message="tns:deletecollResponse" />
 </operation>
-<operation name="insertcoll">
-<input wsam:Action="http://ikarus.me.org/CoreWS/insertcollRequest" message="tns:insertcoll" />
-<output wsam:Action="http://ikarus.me.org/CoreWS/insertcollResponse" message="tns:insertcollResponse" />
+<operation name="searchobj">
+<input wsam:Action="http://ikarus.me.org/CoreWS/searchobjRequest" message="tns:searchobj" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/searchobjResponse" message="tns:searchobjResponse" />
 </operation>
 <operation name="hello">
 <input wsam:Action="http://ikarus.me.org/CoreWS/helloRequest" message="tns:hello" />
@@ -171,6 +181,15 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="insertcoll">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="deletecoll">
 <soap:operation soapAction="" />
 <input>
@@ -180,7 +199,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="insertcoll">
+<operation name="searchobj">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />

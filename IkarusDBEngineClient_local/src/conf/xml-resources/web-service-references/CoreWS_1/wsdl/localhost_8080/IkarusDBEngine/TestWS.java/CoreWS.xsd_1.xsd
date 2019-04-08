@@ -36,6 +36,10 @@
 
 <xs:element name="resetResponse" type="tns:resetResponse" />
 
+<xs:element name="searchobj" type="tns:searchobj" />
+
+<xs:element name="searchobjResponse" type="tns:searchobjResponse" />
+
 <xs:element name="store" type="tns:store" />
 
 <xs:element name="storeResponse" type="tns:storeResponse" />
@@ -146,6 +150,18 @@
 </xs:complexType>
 
 <xs:complexType name="deletecollResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchobj">
+<xs:sequence>
+<xs:element name="text" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="searchobjResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

@@ -93,7 +93,7 @@ public class Main
         if(json_map.containsKey(id))
         {
             SCollection new_coll = new SCollection(id, name);
-            s_coll_map.put(id, new_coll);
+            s_coll_map.put(sid, new_coll);
         }
         else
         {
@@ -175,7 +175,6 @@ public class Main
             }
             
             name = coll_name_map.get(sid);
-            System.out.println(id + s_coll_map.get(sid).headId);
             if(s_coll_map.get(sid).headId.equals(id))
             {
                 return "ERR: CANNOT REMOVE FROM S-COLL. BECAUSE OBJ. IS HEAD!(use deletecoll instead)!";
@@ -202,6 +201,7 @@ public class Main
         {
             return "ERR: S-COLL. TO BE SEARCHED DOESN'T EXIST!";
         }
+        
         else
         {           
             String ret_string = "";
@@ -237,6 +237,33 @@ public class Main
         ScollIds = 0;
         JsonStringId = "";
         ScollStringId = "";
+    }
+    
+    public String searchObj(String text)
+    {
+        String ret_string = "";
+        int matches = 0;
+        
+        for (String key : json_map.keySet()) 
+        {
+            if(json_map.get(key).contains(text))
+            {
+                ret_string += key + ", ";
+                matches++;
+            }
+        }
+        
+        if(matches == 0)
+        {
+            return null;
+        }
+
+        if(ret_string != null && ret_string.length() > 0) 
+        {
+            ret_string = ret_string.substring(0, ret_string.length() - 2);
+        }
+            
+        return ret_string;
     }
     
     

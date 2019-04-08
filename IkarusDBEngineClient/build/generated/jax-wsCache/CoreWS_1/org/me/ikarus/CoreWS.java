@@ -137,21 +137,6 @@ public interface CoreWS {
 
     /**
      * 
-     * @param sid
-     * @return
-     *     returns java.lang.String
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "deletecoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Deletecoll")
-    @ResponseWrapper(localName = "deletecollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DeletecollResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/deletecollRequest", output = "http://ikarus.me.org/CoreWS/deletecollResponse")
-    public String deletecoll(
-        @WebParam(name = "sid", targetNamespace = "")
-        String sid);
-
-    /**
-     * 
      * @param id
      * @param sid
      * @return
@@ -167,6 +152,36 @@ public interface CoreWS {
         String sid,
         @WebParam(name = "id", targetNamespace = "")
         String id);
+
+    /**
+     * 
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "deletecoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Deletecoll")
+    @ResponseWrapper(localName = "deletecollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.DeletecollResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/deletecollRequest", output = "http://ikarus.me.org/CoreWS/deletecollResponse")
+    public String deletecoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid);
+
+    /**
+     * 
+     * @param text
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "searchobj", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Searchobj")
+    @ResponseWrapper(localName = "searchobjResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.SearchobjResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/searchobjRequest", output = "http://ikarus.me.org/CoreWS/searchobjResponse")
+    public String searchobj(
+        @WebParam(name = "text", targetNamespace = "")
+        String text);
 
     /**
      * 

@@ -45,5 +45,9 @@ and open the template in the editor.
         
         <br> <br> <br>
         
+        <input type="button" onclick="location.href='searchobj.html';" value="SEARCHOBJ" />
+        
+        <br>
+        
         <input type="button" onclick="location.href='reset.html';" value="RESET DB" />
 </html>

@@ -204,4 +204,23 @@ public class CoreWS
             return null;
         }  
     }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "searchobj")
+    public String searchjson(@WebParam(name = "text") String text) 
+    {
+        if(text == null)
+        {
+            return "text NULL";
+        }
+        
+        String ret_str = Main.getInstance().searchObj(text);
+        
+        // server log:
+        System.out.println("SEARCHOBJ: " + ret_str);
+        
+        return ret_str;
+    }
 }

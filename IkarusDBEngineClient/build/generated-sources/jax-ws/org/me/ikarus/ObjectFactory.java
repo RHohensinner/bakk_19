@@ -36,9 +36,11 @@ public class ObjectFactory {
     private final static QName _StoreResponse_QNAME = new QName("http://ikarus.me.org/", "storeResponse");
     private final static QName _Get_QNAME = new QName("http://ikarus.me.org/", "get");
     private final static QName _MakecollResponse_QNAME = new QName("http://ikarus.me.org/", "makecollResponse");
+    private final static QName _SearchobjResponse_QNAME = new QName("http://ikarus.me.org/", "searchobjResponse");
     private final static QName _HelloResponse_QNAME = new QName("http://ikarus.me.org/", "helloResponse");
     private final static QName _DeleteResponse_QNAME = new QName("http://ikarus.me.org/", "deleteResponse");
     private final static QName _InsertcollResponse_QNAME = new QName("http://ikarus.me.org/", "insertcollResponse");
+    private final static QName _Searchobj_QNAME = new QName("http://ikarus.me.org/", "searchobj");
     private final static QName _Removecoll_QNAME = new QName("http://ikarus.me.org/", "removecoll");
     private final static QName _RemovecollResponse_QNAME = new QName("http://ikarus.me.org/", "removecollResponse");
     private final static QName _Hello_QNAME = new QName("http://ikarus.me.org/", "hello");
@@ -141,6 +143,14 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link Searchobj }
+     * 
+     */
+    public Searchobj createSearchobj() {
+        return new Searchobj();
+    }
+
+    /**
      * Create an instance of {@link InsertcollResponse }
      * 
      */
@@ -178,6 +188,14 @@ public class ObjectFactory {
      */
     public MakecollResponse createMakecollResponse() {
         return new MakecollResponse();
+    }
+
+    /**
+     * Create an instance of {@link SearchobjResponse }
+     * 
+     */
+    public SearchobjResponse createSearchobjResponse() {
+        return new SearchobjResponse();
     }
 
     /**
@@ -321,6 +339,15 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link SearchobjResponse }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "searchobjResponse")
+    public JAXBElement<SearchobjResponse> createSearchobjResponse(SearchobjResponse value) {
+        return new JAXBElement<SearchobjResponse>(_SearchobjResponse_QNAME, SearchobjResponse.class, null, value);
+    }
+
+    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link HelloResponse }{@code >}}
      * 
      */
@@ -345,6 +372,15 @@ public class ObjectFactory {
     @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "insertcollResponse")
     public JAXBElement<InsertcollResponse> createInsertcollResponse(InsertcollResponse value) {
         return new JAXBElement<InsertcollResponse>(_InsertcollResponse_QNAME, InsertcollResponse.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Searchobj }{@code >}}
+     * 
+     */
+    @XmlElementDecl(namespace = "http://ikarus.me.org/", name = "searchobj")
+    public JAXBElement<Searchobj> createSearchobj(Searchobj value) {
+        return new JAXBElement<Searchobj>(_Searchobj_QNAME, Searchobj.class, null, value);
     }
 
     /**
