@@ -117,7 +117,7 @@ public class Main
         
         if(!coll_name_map.containsKey(sid))
         {
-            return "ERR: S-COLL. TO BE DELEATED DOESN'T EXIST!";
+            return "ERR: S-COLL. TO BE DELETED DOESN'T EXIST!";
         }
         else
         {
@@ -149,11 +149,11 @@ public class Main
             if(!s_coll_map.get(sid).s_vector.contains(id))
             {
                 s_coll_map.get(sid).s_vector.add(s_coll_map.get(sid).s_vector.size(), id);
-                return id + " successfully inserted into: " + sid + "(" + name + ")!";   
+                return id + " successfully inserted into: " + sid + "(" + name + ")";   
             }
             else
             {
-                return "ERR: JSON ID IS ALREADY MEMEBER OF S-COLL.!";   
+                return "ERR: JSON ID IS ALREADY A MEMBER OF S-COLL.!";   
             }
             
         }
@@ -184,11 +184,11 @@ public class Main
                 if(s_coll_map.get(sid).s_vector.contains(id))
                 {
                     s_coll_map.get(sid).s_vector.remove(id);
-                    return id + " successfully removed from: " + sid + "(" + name + ")!";   
+                    return id + " successfully removed from: " + sid + "(" + name + ")";   
                 }
                 else
                 {
-                    return "ERR: JSON ID IS NOT MEMEBER OF S-COLL.!";
+                    return "ERR: JSON ID IS NOT A MEMBER OF S-COLL.!";
                 }
                 
             }

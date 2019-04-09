@@ -6,12 +6,12 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>Main Menue</title>
+        <title>Main Menu</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h1>Welcome to Ikarus DBEngine!</h1>
+        <h1>Welcome to Ikarus DBEngine Client!</h1>
         
         <input type="button" onclick="location.href='store.html';" value="STORE" />
         
@@ -43,11 +43,11 @@ and open the template in the editor.
         
         <input type="button" onclick="location.href='getcoll.html';" value="GETCOLL" />
         
-        <br> <br> <br>
+        <br> <br>
         
         <input type="button" onclick="location.href='searchobj.html';" value="SEARCHOBJ" />
         
-        <br> <br> <br>
+        <br> <br>
         
         <input type="button" onclick="location.href='reset.html';" value="RESET DB" />
 </html>

@@ -31,7 +31,15 @@
     <%-- end web service invocation --%><hr/>
     
     <br><br>
-    <input type="button" onclick="location.href='index.html';" value="Main Menue" />
+    
+    <input type="button" onclick="location.href='index.html';" value="Main Menu" />
+    <button onclick="goBack()">Back</button>
+    <script>
+        function goBack() 
+        {
+            window.history.back();
+        }
+    </script>  
 
     </body>
 </html>

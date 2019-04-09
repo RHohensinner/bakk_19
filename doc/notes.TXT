@@ -1,0 +1,21 @@
+    
+/**
+* Web service operation
+*/
+@WebMethod(operationName = "store")
+public String store(@WebParam(name = "content") String content) 
+{
+    if(content == null)
+    {
+         return "content NULL";
+    }
+        
+    String new_id = Main.getInstance().getNewJsonId();
+    Main.getInstance().addNewJson(new_id, content);
+        
+    // server log:
+    System.out.println("STORE: " + new_id + " " + content);
+        
+    return new_id;
+}
+
