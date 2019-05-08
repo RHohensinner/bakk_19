@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Change HTML</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        
+        <h1>Please provide a JSON ID and the content to be changed</h1>
+        <form action="change.jsp" id="changeform" method="post">
+            JSON ID: <br><input type="number" name="json_id" id="jsonId" value="0"> (e.g. 000001)<br><br>
+        </form>
+        
+        <textarea name="json_content" id="jsonContent" rows="20" cols="50" form="changeform">Enter new JSONcontent here...</textarea><br>
+        <input type="submit" value="Submit" form="changeform">
+        
+        
+        <button onclick="goBack()">Back</button>
+
+        <script>
+        function goBack() {
+             window.history.back();
+        }
+        </script> 
+    </body>
+</html>

@@ -104,6 +104,57 @@ public interface CoreWS {
 
     /**
      * 
+     * @param id
+     * @param content
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "change", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Change")
+    @ResponseWrapper(localName = "changeResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.ChangeResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/changeRequest", output = "http://ikarus.me.org/CoreWS/changeResponse")
+    public String change(
+        @WebParam(name = "id", targetNamespace = "")
+        String id,
+        @WebParam(name = "content", targetNamespace = "")
+        String content);
+
+    /**
+     * 
+     * @param name
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "hello", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Hello")
+    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.HelloResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/helloRequest", output = "http://ikarus.me.org/CoreWS/helloResponse")
+    public String hello(
+        @WebParam(name = "name", targetNamespace = "")
+        String name);
+
+    /**
+     * 
+     * @param id
+     * @param sid
+     * @return
+     *     returns java.lang.String
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "insertcoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Insertcoll")
+    @ResponseWrapper(localName = "insertcollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.InsertcollResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/insertcollRequest", output = "http://ikarus.me.org/CoreWS/insertcollResponse")
+    public String insertcoll(
+        @WebParam(name = "sid", targetNamespace = "")
+        String sid,
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
+
+    /**
+     * 
      * @param name
      * @param id
      * @return
@@ -137,21 +188,18 @@ public interface CoreWS {
 
     /**
      * 
-     * @param id
-     * @param sid
+     * @param text
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "insertcoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Insertcoll")
-    @ResponseWrapper(localName = "insertcollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.InsertcollResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/insertcollRequest", output = "http://ikarus.me.org/CoreWS/insertcollResponse")
-    public String insertcoll(
-        @WebParam(name = "sid", targetNamespace = "")
-        String sid,
-        @WebParam(name = "id", targetNamespace = "")
-        String id);
+    @RequestWrapper(localName = "searchobj", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Searchobj")
+    @ResponseWrapper(localName = "searchobjResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.SearchobjResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/searchobjRequest", output = "http://ikarus.me.org/CoreWS/searchobjResponse")
+    public String searchobj(
+        @WebParam(name = "text", targetNamespace = "")
+        String text);
 
     /**
      * 
@@ -170,32 +218,29 @@ public interface CoreWS {
 
     /**
      * 
-     * @param text
+     * @param id
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "searchobj", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Searchobj")
-    @ResponseWrapper(localName = "searchobjResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.SearchobjResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/searchobjRequest", output = "http://ikarus.me.org/CoreWS/searchobjResponse")
-    public String searchobj(
-        @WebParam(name = "text", targetNamespace = "")
-        String text);
+    @RequestWrapper(localName = "searchcoll", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Searchcoll")
+    @ResponseWrapper(localName = "searchcollResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.SearchcollResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/searchcollRequest", output = "http://ikarus.me.org/CoreWS/searchcollResponse")
+    public String searchcoll(
+        @WebParam(name = "id", targetNamespace = "")
+        String id);
 
     /**
      * 
-     * @param name
      * @return
      *     returns java.lang.String
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "hello", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Hello")
-    @ResponseWrapper(localName = "helloResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.HelloResponse")
-    @Action(input = "http://ikarus.me.org/CoreWS/helloRequest", output = "http://ikarus.me.org/CoreWS/helloResponse")
-    public String hello(
-        @WebParam(name = "name", targetNamespace = "")
-        String name);
+    @RequestWrapper(localName = "stat", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.Stat")
+    @ResponseWrapper(localName = "statResponse", targetNamespace = "http://ikarus.me.org/", className = "org.me.ikarus.StatResponse")
+    @Action(input = "http://ikarus.me.org/CoreWS/statRequest", output = "http://ikarus.me.org/CoreWS/statResponse")
+    public String stat();
 
 }

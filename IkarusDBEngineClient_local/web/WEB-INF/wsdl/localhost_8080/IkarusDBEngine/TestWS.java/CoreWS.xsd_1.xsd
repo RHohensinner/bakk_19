@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://ikarus.me.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://ikarus.me.org/">
 
+<xs:element name="change" type="tns:change" />
+
+<xs:element name="changeResponse" type="tns:changeResponse" />
+
 <xs:element name="delete" type="tns:delete" />
 
 <xs:element name="deleteResponse" type="tns:deleteResponse" />
@@ -36,34 +40,29 @@
 
 <xs:element name="resetResponse" type="tns:resetResponse" />
 
+<xs:element name="searchcoll" type="tns:searchcoll" />
+
+<xs:element name="searchcollResponse" type="tns:searchcollResponse" />
+
 <xs:element name="searchobj" type="tns:searchobj" />
 
 <xs:element name="searchobjResponse" type="tns:searchobjResponse" />
+
+<xs:element name="stat" type="tns:stat" />
+
+<xs:element name="statResponse" type="tns:statResponse" />
 
 <xs:element name="store" type="tns:store" />
 
 <xs:element name="storeResponse" type="tns:storeResponse" />
 
-<xs:complexType name="store">
+<xs:complexType name="searchcoll">
 <xs:sequence>
-<xs:element name="content" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="storeResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="makecoll">
-<xs:sequence>
-<xs:element name="name" type="xs:string" minOccurs="0" />
 <xs:element name="id" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="makecollResponse">
+<xs:complexType name="searchcollResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
@@ -106,6 +105,43 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="get">
+<xs:sequence>
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="getResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="store">
+<xs:sequence>
+<xs:element name="content" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="storeResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="makecoll">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0" />
+<xs:element name="id" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="makecollResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="removecoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
@@ -143,6 +179,16 @@
 </xs:sequence>
 </xs:complexType>
 
+<xs:complexType name="stat">
+<xs:sequence />
+</xs:complexType>
+
+<xs:complexType name="statResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
 <xs:complexType name="deletecoll">
 <xs:sequence>
 <xs:element name="sid" type="xs:string" minOccurs="0" />
@@ -167,13 +213,14 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="get">
+<xs:complexType name="change">
 <xs:sequence>
 <xs:element name="id" type="xs:string" minOccurs="0" />
+<xs:element name="content" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="getResponse">
+<xs:complexType name="changeResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

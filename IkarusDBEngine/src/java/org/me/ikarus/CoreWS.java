@@ -33,7 +33,7 @@ public class CoreWS
     @WebMethod(operationName = "store")
     public String store(@WebParam(name = "content") String content) 
     {
-        if(content == null)
+        if(content.isEmpty())
         {
             return "content NULL";
         }
@@ -53,7 +53,7 @@ public class CoreWS
     @WebMethod(operationName = "get")
     public String get(@WebParam(name = "id") String id) 
     {   
-        if(id == null)
+        if(id.isEmpty())
         {
             return "id NULL";
         }
@@ -65,6 +65,25 @@ public class CoreWS
         
         return found_json;
     }
+    
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "change")
+    public String change(@WebParam(name = "id") String id, @WebParam(name = "content") String content) 
+    {
+        if(id.isEmpty() || content.isEmpty())
+        {
+            return "id or content NULL";
+        }
+        
+        String ret_str = Main.getInstance().changeJson(id, content);
+        
+        // server log:
+        System.out.println("CHANGE: " + id + " changed content successfully to" + content);
+        
+        return ret_str;
+    }
 
     /**
      * Web service operation
@@ -72,7 +91,7 @@ public class CoreWS
     @WebMethod(operationName = "delete")
     public String delete(@WebParam(name = "id") String id) 
     {
-        if(id == null)
+        if(id.isEmpty())
         {
             return "id NULL";
         }
@@ -85,6 +104,7 @@ public class CoreWS
         if(found_json != null)
         {
             Main.getInstance().removeJson(id);
+            Main.getInstance().refreshScoll(id);
             return id + " deleted";
         }
         else
@@ -99,7 +119,7 @@ public class CoreWS
     @WebMethod(operationName = "makecoll")
     public String makecoll(@WebParam(name = "name") String name, @WebParam(name = "id") String id) 
     {
-        if(id == null || name == null)
+        if(id.isEmpty() || name.isEmpty())
         {
             return "id or name NULL";
         }
@@ -118,7 +138,7 @@ public class CoreWS
     @WebMethod(operationName = "deletecoll")
     public String deletecoll(@WebParam(name = "sid") String sid) 
     {
-        if(sid == null)
+        if(sid.isEmpty())
         {
             return "sid NULL";
         }
@@ -137,7 +157,7 @@ public class CoreWS
     @WebMethod(operationName = "insertcoll")
     public String insertcoll(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
     {
-        if(sid == null || id == null)
+        if(sid.isEmpty() || id.isEmpty())
         {
             return "sid or id NULL";
         }
@@ -156,7 +176,7 @@ public class CoreWS
     @WebMethod(operationName = "removecoll")
     public String remove(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
     {
-        if(sid == null|| id == null)
+        if(sid.isEmpty()|| id.isEmpty())
         {
             return "sid or id NULL";
         }
@@ -175,7 +195,7 @@ public class CoreWS
     @WebMethod(operationName = "getcoll")
     public String getcoll(@WebParam(name = "sid") String sid) 
     {
-        if(sid == null)
+        if(sid.isEmpty())
         {
             return "sid NULL";
         }
@@ -211,7 +231,7 @@ public class CoreWS
     @WebMethod(operationName = "searchobj")
     public String searchjson(@WebParam(name = "text") String text) 
     {
-        if(text == null)
+        if(text.isEmpty())
         {
             return "text NULL";
         }
@@ -223,4 +243,35 @@ public class CoreWS
         
         return ret_str;
     }
+    
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "searchcoll")
+    public String searchcoll(@WebParam(name = "id") String id) 
+    {
+        if(id.isEmpty())
+        {
+            return "id NULL";
+        }
+        
+        String ret_str = Main.getInstance().searchColl(id);
+        
+        // server log:
+        System.out.println("SEARCHCOLL: " + ret_str);
+        
+        return ret_str;
+    }
+
+    /**
+     * Web service operation
+     */
+    @WebMethod(operationName = "stat")
+    public String stat() 
+    {
+        String ret_str = Main.getInstance().stat();
+        return ret_str;
+    }
+
+
 }

@@ -21,6 +21,10 @@ and open the template in the editor.
                 
         <br>
         
+        <input type="button" onclick="location.href='change.html';" value="CHANGE" />
+                
+        <br>
+        
         <input type="button" onclick="location.href='delete.html';" value="DELETE" />
                 
         <br><br>
@@ -46,6 +50,14 @@ and open the template in the editor.
         <br> <br> <br>
         
         <input type="button" onclick="location.href='searchobj.html';" value="SEARCHOBJ" />
+        
+        <br>
+        
+        <input type="button" onclick="location.href='searchcoll.html';" value="SEARCHCOLL" />
+        
+        <br>
+        
+        <input type="button" onclick="location.href='stat.jsp';" value="STAT" />
         
         <br>
         

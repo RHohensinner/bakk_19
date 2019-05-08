@@ -34,6 +34,24 @@
 <message name="resetResponse">
 <part name="parameters" element="tns:resetResponse" />
 </message>
+<message name="change">
+<part name="parameters" element="tns:change" />
+</message>
+<message name="changeResponse">
+<part name="parameters" element="tns:changeResponse" />
+</message>
+<message name="hello">
+<part name="parameters" element="tns:hello" />
+</message>
+<message name="helloResponse">
+<part name="parameters" element="tns:helloResponse" />
+</message>
+<message name="insertcoll">
+<part name="parameters" element="tns:insertcoll" />
+</message>
+<message name="insertcollResponse">
+<part name="parameters" element="tns:insertcollResponse" />
+</message>
 <message name="makecoll">
 <part name="parameters" element="tns:makecoll" />
 </message>
@@ -46,11 +64,11 @@
 <message name="getcollResponse">
 <part name="parameters" element="tns:getcollResponse" />
 </message>
-<message name="insertcoll">
-<part name="parameters" element="tns:insertcoll" />
+<message name="searchobj">
+<part name="parameters" element="tns:searchobj" />
 </message>
-<message name="insertcollResponse">
-<part name="parameters" element="tns:insertcollResponse" />
+<message name="searchobjResponse">
+<part name="parameters" element="tns:searchobjResponse" />
 </message>
 <message name="deletecoll">
 <part name="parameters" element="tns:deletecoll" />
@@ -58,17 +76,17 @@
 <message name="deletecollResponse">
 <part name="parameters" element="tns:deletecollResponse" />
 </message>
-<message name="searchobj">
-<part name="parameters" element="tns:searchobj" />
+<message name="searchcoll">
+<part name="parameters" element="tns:searchcoll" />
 </message>
-<message name="searchobjResponse">
-<part name="parameters" element="tns:searchobjResponse" />
+<message name="searchcollResponse">
+<part name="parameters" element="tns:searchcollResponse" />
 </message>
-<message name="hello">
-<part name="parameters" element="tns:hello" />
+<message name="stat">
+<part name="parameters" element="tns:stat" />
 </message>
-<message name="helloResponse">
-<part name="parameters" element="tns:helloResponse" />
+<message name="statResponse">
+<part name="parameters" element="tns:statResponse" />
 </message>
 <portType name="CoreWS">
 <operation name="removecoll">
@@ -91,6 +109,18 @@
 <input wsam:Action="http://ikarus.me.org/CoreWS/resetRequest" message="tns:reset" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/resetResponse" message="tns:resetResponse" />
 </operation>
+<operation name="change">
+<input wsam:Action="http://ikarus.me.org/CoreWS/changeRequest" message="tns:change" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/changeResponse" message="tns:changeResponse" />
+</operation>
+<operation name="hello">
+<input wsam:Action="http://ikarus.me.org/CoreWS/helloRequest" message="tns:hello" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/helloResponse" message="tns:helloResponse" />
+</operation>
+<operation name="insertcoll">
+<input wsam:Action="http://ikarus.me.org/CoreWS/insertcollRequest" message="tns:insertcoll" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/insertcollResponse" message="tns:insertcollResponse" />
+</operation>
 <operation name="makecoll">
 <input wsam:Action="http://ikarus.me.org/CoreWS/makecollRequest" message="tns:makecoll" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/makecollResponse" message="tns:makecollResponse" />
@@ -99,21 +129,21 @@
 <input wsam:Action="http://ikarus.me.org/CoreWS/getcollRequest" message="tns:getcoll" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/getcollResponse" message="tns:getcollResponse" />
 </operation>
-<operation name="insertcoll">
-<input wsam:Action="http://ikarus.me.org/CoreWS/insertcollRequest" message="tns:insertcoll" />
-<output wsam:Action="http://ikarus.me.org/CoreWS/insertcollResponse" message="tns:insertcollResponse" />
+<operation name="searchobj">
+<input wsam:Action="http://ikarus.me.org/CoreWS/searchobjRequest" message="tns:searchobj" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/searchobjResponse" message="tns:searchobjResponse" />
 </operation>
 <operation name="deletecoll">
 <input wsam:Action="http://ikarus.me.org/CoreWS/deletecollRequest" message="tns:deletecoll" />
 <output wsam:Action="http://ikarus.me.org/CoreWS/deletecollResponse" message="tns:deletecollResponse" />
 </operation>
-<operation name="searchobj">
-<input wsam:Action="http://ikarus.me.org/CoreWS/searchobjRequest" message="tns:searchobj" />
-<output wsam:Action="http://ikarus.me.org/CoreWS/searchobjResponse" message="tns:searchobjResponse" />
+<operation name="searchcoll">
+<input wsam:Action="http://ikarus.me.org/CoreWS/searchcollRequest" message="tns:searchcoll" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/searchcollResponse" message="tns:searchcollResponse" />
 </operation>
-<operation name="hello">
-<input wsam:Action="http://ikarus.me.org/CoreWS/helloRequest" message="tns:hello" />
-<output wsam:Action="http://ikarus.me.org/CoreWS/helloResponse" message="tns:helloResponse" />
+<operation name="stat">
+<input wsam:Action="http://ikarus.me.org/CoreWS/statRequest" message="tns:stat" />
+<output wsam:Action="http://ikarus.me.org/CoreWS/statResponse" message="tns:statResponse" />
 </operation>
 </portType>
 <binding name="CoreWSPortBinding" type="tns:CoreWS">
@@ -163,6 +193,33 @@
 <soap:body use="literal" />
 </output>
 </operation>
+<operation name="change">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="hello">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="insertcoll">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
 <operation name="makecoll">
 <soap:operation soapAction="" />
 <input>
@@ -181,7 +238,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="insertcoll">
+<operation name="searchobj">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -199,7 +256,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="searchobj">
+<operation name="searchcoll">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -208,7 +265,7 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="hello">
+<operation name="stat">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
