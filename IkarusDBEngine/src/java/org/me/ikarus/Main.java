@@ -393,7 +393,7 @@ public class Main
     {
         String ret_str = json_map.keySet().toString();
         ret_str += "\r\n";
-        ret_str += s_coll_name_map.keySet().toString();
+        ret_str += s_coll_name_map.entrySet().toString();
         ret_str += "\r\n";
         
         return ret_str;
