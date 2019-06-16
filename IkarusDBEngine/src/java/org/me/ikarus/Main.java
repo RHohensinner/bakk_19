@@ -156,7 +156,7 @@ public class Main
         return sid + "(" + name + ")" + " deleted";
     }
     
-    public String insertScoll(String sid, String id)
+    public String insertScollObj(String sid, String id)
     {
         String name;
         
@@ -185,7 +185,41 @@ public class Main
         }
     }
     
-    public String removeScoll(String sid, String id)
+    public String insertScollCol(String sid, String id)
+    {
+        String name;
+        
+        if(sid.equals(id))
+        {
+            return "ERR: S-COLL. CAN'T BE INSERTED INTO ITSELF";
+        }
+        
+        if(!s_coll_name_map.containsKey(sid))
+        {
+            return "ERR: S-COLL. TO BE INSERTED INTO DOESN'T EXIST!";
+        }
+        else
+        {
+            if(!s_coll_name_map.containsKey(id))
+            {
+               return "ERR: INVALID S-COLL ID!"; 
+            }
+            name = s_coll_name_map.get(sid);
+            
+            if(!s_coll_obj_map.get(sid).s_vector.contains(id))
+            {
+                s_coll_obj_map.get(sid).s_vector.add(s_coll_obj_map.get(sid).s_vector.size(), id);
+                return id + " successfully inserted into: " + sid + "(" + name + ")";   
+            }
+            else
+            {
+                return "ERR: S-COLL ID IS ALREADY A MEMBER OF S-COLL.!";   
+            }
+            
+        }
+    }
+    
+    public String removeScollObj(String sid, String id)
     {
         String name;
         
@@ -215,6 +249,42 @@ public class Main
                 else
                 {
                     return "ERR: JSON ID IS NOT A MEMBER OF S-COLL.!";
+                }
+                
+            }
+        }
+    }
+    
+    public String removeScollCol(String sid, String id)
+    {
+        String name;
+        
+        if(!s_coll_name_map.containsKey(sid))
+        {
+            return "ERR: S-COLL. TO BE REMOVED FROM DOESN'T EXIST!";
+        }
+        else
+        {
+            if(!s_coll_name_map.containsKey(id))
+            {
+               return "ERR: INVALID S-COLL ID!"; 
+            }
+            
+            name = s_coll_name_map.get(sid);
+            if(s_coll_obj_map.get(sid).headId.equals(id))
+            {
+                return "ERR: CANNOT REMOVE FROM S-COLL. BECAUSE OBJ. IS HEAD!(use deletecoll instead)!";
+            }
+            else
+            {
+                if(s_coll_obj_map.get(sid).s_vector.contains(id))
+                {
+                    s_coll_obj_map.get(sid).s_vector.remove(id);
+                    return id + " successfully removed from: " + sid + "(" + name + ")";   
+                }
+                else
+                {
+                    return "ERR: S-COLL ID IS NOT A MEMBER OF S-COLL.!";
                 }
                 
             }

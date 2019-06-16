@@ -144,6 +144,7 @@ public class CoreWS
         }
         
         String ret_str = Main.getInstance().deleteScoll(sid);
+        Main.getInstance().refreshScoll(sid);
         
         // server log:
         System.out.println("DELETECOLL: " + ret_str);
@@ -162,7 +163,17 @@ public class CoreWS
             return "sid or id NULL";
         }
         
-        String ret_str = Main.getInstance().insertScoll(sid, id);
+        String ret_str;
+        
+        if(id.contains("s-"))
+        {
+            ret_str = Main.getInstance().insertScollCol(sid, id);
+        }
+        else
+        {
+            ret_str = Main.getInstance().insertScollObj(sid, id);
+        }
+        
         
         // server log:
         System.out.println("INSERTCOLL: " + ret_str);
@@ -174,14 +185,23 @@ public class CoreWS
      * Web service operation
      */
     @WebMethod(operationName = "removecoll")
-    public String remove(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
+    public String removecoll(@WebParam(name = "sid") String sid, @WebParam(name = "id") String id) 
     {
         if(sid.isEmpty()|| id.isEmpty())
         {
             return "sid or id NULL";
         }
         
-        String ret_str = Main.getInstance().removeScoll(sid, id);
+        String ret_str;
+        
+        if(id.contains("s-"))
+        {
+            ret_str = Main.getInstance().removeScollCol(sid, id);
+        }
+        else
+        {
+            ret_str = Main.getInstance().removeScollObj(sid, id);
+        }
         
         // server log:
         System.out.println("REMOVECOLL: " + ret_str);
