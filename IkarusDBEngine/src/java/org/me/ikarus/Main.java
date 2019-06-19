@@ -309,12 +309,24 @@ public class Main
                 if(index == (s_coll_obj_map.get(sid).s_vector.size() - 1))
                 {
                     ret_string += s_coll_obj_map.get(sid).s_vector.get(index).toString();
+                    if(s_coll_obj_map.get(sid).s_vector.get(index).toString().contains("s-"))
+                    {
+                        ret_string += "(" + s_coll_obj_map.get(s_coll_obj_map.get(sid).s_vector.get(index)).collname + ")";
+                    }
                     break;
                 }
                 
                 else
                 {
-                    ret_string += s_coll_obj_map.get(sid).s_vector.get(index).toString() + ",";
+                    if(s_coll_obj_map.get(sid).s_vector.get(index).toString().contains("s-"))
+                    {
+                        ret_string += s_coll_obj_map.get(sid).s_vector.get(index).toString() + "(" + s_coll_obj_map.get(s_coll_obj_map.get(sid).s_vector.get(index)).collname + ")" + ",";
+                    }
+                    else
+                    {
+                        ret_string += s_coll_obj_map.get(sid).s_vector.get(index).toString() + ",";
+                    }
+                    
                 }
             }
             
